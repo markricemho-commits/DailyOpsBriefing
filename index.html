@@ -180,6 +180,23 @@ body {
 .panel-header.purple { background: #CC99CC; }
 .panel-body.purple { border-color: #CC99CC; }
 .item-tag.purple { color: #CC99CC; }
+.lcars-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 20px;
+  border-radius: 14px;
+  font-family: 'BebasNeue', 'Arial Narrow', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  background: #9999FF;
+}
+.lcars-button.salmon { background: #CC6666; }
+.lcars-button.tan { background: #FFCC99; }
+.lcars-button.periwinkle { background: #9999FF; }
+.lcars-button.purple { background: #CC99CC; }
 .status-line {
   font-family: 'TitilliumWeb', -apple-system, "Segoe UI", sans-serif;
   font-weight: 600;
@@ -303,13 +320,13 @@ body {
       <div class="stardate">STARDATE 103834.2 &middot; OPERATIONS</div>
       <div class="status-lights">
         <div class="light-item"><span class="light green"></span><span class="light-label">WASHINGTON</span></div>
-        <div class="light-item"><span class="light green"></span><span class="light-label">TEXAS</span></div>
+        <div class="light-item"><span class="light red"></span><span class="light-label">TEXAS</span></div>
       </div>
     </div>
 
     <div class="headline-block">
-      <div class="daydate">WEDNESDAY &bull; SEPTEMBER 2 2026</div>
-      <div class="headline">Four check-ins carry you to 1:30, Mark &mdash; then the afternoon opens up.</div>
+      <div class="daydate">TUESDAY &bull; SEPTEMBER 8 2026</div>
+      <div class="headline">Centralia today: becoming sunny, high near 76&deg;F, calm wind turning north-northeast 5&ndash;7 mph this afternoon &mdash; no active weather alerts.</div>
     </div>
 
     <div class="panel">
@@ -317,16 +334,26 @@ body {
       <div class="panel-body periwinkle">
         <div class="timeline-hours"><span>0600</span><span>0900</span><span>1200</span><span>1500</span><span>1800</span><span>2100</span></div>
         <div class="timeline-bar">
-          <div class="timeline-seg" style="left:13.3%; width:3.3%; background:#FF9C00;"></div>
-          <div class="timeline-seg" style="left:34.4%; width:3.3%; background:#9999FF;"></div>
-          <div class="timeline-seg" style="left:40%; width:3.3%; background:#CC6666;"></div>
-          <div class="timeline-seg" style="left:46.7%; width:3.3%; background:#CC99CC;"></div>
+          <div class="timeline-seg" style="left:16.7%; width:3.3%; background:#FF9C00;"></div>
+          <div class="timeline-seg" style="left:53.3%; width:3.3%; background:#9999FF;"></div>
         </div>
         <div class="timeline-legend">
-          <div class="leg-item"><span class="leg-swatch" style="background:#FF9C00;"></span>0800 &mdash; MHO Washington daily manager meeting</div>
-          <div class="leg-item"><span class="leg-swatch" style="background:#9999FF;"></span>1110 &mdash; Weekly sync with the Ezee/PNW team</div>
-          <div class="leg-item"><span class="leg-swatch" style="background:#CC6666;"></span>1200 &mdash; Medina partner bi-weekly call</div>
-          <div class="leg-item"><span class="leg-swatch" style="background:#CC99CC;"></span>1300 &mdash; G&amp;J bi-weekly check-in</div>
+          <div class="leg-item"><span class="leg-swatch" style="background:#FF9C00;"></span>0830 &mdash; Washington daily morning meeting (product &amp; market updates)</div>
+          <div class="leg-item"><span class="leg-swatch" style="background:#9999FF;"></span>1400 &mdash; Kent, Des Moines &amp; Issaquah daily check-ins, back-to-back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header salmon">Needs Attention</div>
+      <div class="panel-body salmon">
+        <div class="item-row">
+          <div class="item-tag" style="color:#CC6666;">01</div>
+          <div class="item-body">
+            <div class="item-title">Cryptozoic needs your new shipping address</div>
+            <div class="item-sentence">Austin from Cryptozoic Entertainment <a href="https://www.kickstarter.com/messages/67397635?ref=ksr_email_user_new_message_notification">messaged you on Kickstarter</a> asking you to send your updated shipping address for the DC Heroes Role-Playing Game reward &mdash; worth handling before your move at the end of October since the reward hasn&rsquo;t shipped yet.</div>
+            <a class="lcars-button salmon" href="#">DRAFT THE REPLY</a>
+          </div>
         </div>
       </div>
     </div>
@@ -337,29 +364,50 @@ body {
         <div class="item-row">
           <div class="item-tag" style="color:#99CCFF;">01</div>
           <div class="item-body">
-            <div class="item-title">Your afternoon check-ins got cancelled</div>
-            <div class="item-sentence">Chris Atkinson cancelled the 2 PM run of Kent, Des Moines, and Issaquah daily check-ins <a href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8IhSHDAAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNAIUpM6CxJh5HjOiZ0QSM7LkAAFFjHAsAABA%3D&exvsurl=1&path=/calendar/item">on your calendar</a> today &mdash; nothing else is on the books after 1:30.</div>
+            <div class="item-title">G&amp;J's first KT4.10 ticket landed a little late</div>
+            <div class="item-sentence">The first Kent-area ticket tied to the Aug 31 KT4.10 award appears to have been filed Sept 3 at 11:41 AM &mdash; about 71 hours after the award, roughly 23 hours past the 48-hour window. No action needed; noting it once here per the standing check.</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="panel">
+      <div class="panel-header blue">Kickstarter</div>
+      <div class="panel-body blue">
+        <div class="prose">DC Heroes Role-Playing Game 40th Anniversary: no new numbered Project Update since #36, but Cryptozoic's Austin sent a direct backer message Sept 5 asking for your current shipping address ahead of fulfillment &mdash; see Needs Attention above.</div>
+      </div>
+    </div>
+
+    <div class="panel">
       <div class="panel-header tan">Cargo &amp; Orders</div>
       <div class="panel-body tan">
-        <div class="prose">Your PeptiCool peptide cooler (YunExpress <a href="https://www.yuntrack.com/parcelTracking?id=YT2623300704375895">YT2623300704375895</a>) departed the shipping partner facility in North Las Vegas yesterday and is now with USPS for the final leg &mdash; no delivery date yet, but it&rsquo;s moving steadily. A new order from Value Research Labs placed yesterday finished processing this morning and is being prepared to ship &mdash; no tracking number yet.</div>
+        <div class="prose">Value Research Labs order #23188 (5-Amino-1MQ, NAD+, bacteriostatic water) shipped UPS 2nd Day Air and went out for delivery yesterday evening &mdash; should be in hand today. A new order from Sparrows Lock Picks (Tuxedo Set, Warded Pick Set) shipped USPS and has been on the way since Sept 6. Your PeptiCool peptide cooler (YunExpress <a href="https://www.yuntrack.com/parcelTracking?id=YT2623300704375895">YT2623300704375895</a>) has no new status since it handed off to USPS on Sept 2 &mdash; a live recheck this morning timed out, so this is last-known status, not confirmed current.</div>
       </div>
     </div>
 
     <div class="panel">
       <div class="panel-header purple">Locate Compliance</div>
       <div class="panel-body purple">
-        <div class="status-line">Outlook scanned for section-award emails, last 10 days &mdash; <span class="ok">1 fresh award found</span>. Both online dashboards checked directly and dated today: <a href="https://markricemho-commits.github.io/wa811-dashboard/">Washington</a> as of 12:26 AM (68 tickets across G&amp;J/Medina/JR Drilling &mdash; 23 open, 45 complete, 11 expiring within 10 days) and <a href="https://markricemho-commits.github.io/tx811-dashboard/">Texas</a> as of 12:47 AM (109 tickets across G-Reed and LV Electric &mdash; 8 expiring within 4 days) &mdash; see the two lights above.</div>
+        <div class="status-line">Outlook scanned for section-award emails, last 10 days &mdash; <span class="ok">4 fresh awards found</span> (2 Washington &mdash; both G&amp;J; 2 Texas &mdash; LV Electric and Cable Jimenez, out of scope for this WA-only check, see below). The nightly Watchdog data file wasn&rsquo;t reachable this session, so both the health check and ticket matching fell back to the live dashboard page directly: <a href="https://markricemho-commits.github.io/wa811-dashboard/">Washington</a> as of today, September 8 at 12:32 AM (71 tickets across G&amp;J/Medina/JR Drilling &mdash; 10 open, 61 complete, 18 expiring within 10 days) &mdash; green light above. <a href="https://markricemho-commits.github.io/tx811-dashboard/">Texas</a> last refreshed September 7 at 12:47 AM, a day stale &mdash; red light above.</div>
         <div class="item-row">
           <div class="item-tag purple">01</div>
           <div class="item-body">
             <div class="item-title">G&amp;J FIBER GROUP LLC &mdash; KT4.10, Phase 1</div>
-            <div class="item-sentence">Awarded <a href="https://outlook.office365.com/owa/?ItemID=AAMkADI5NTRlNmNlLTRlMTktNDFlYS1iMmY5LTA5MTdhOWQ2MDVlZABGAAAAAADSd4Gp6MM1T4f0azuAvNVmBwCFKTOgsSYeR4zomdEEjOy5AAAAAH%2FaAACFKTOgsSYeR4zomdEEjOy5AABmiDTgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem">Sunday, Aug 31 at 12:44 PM</a>, about 45 hours ago &mdash; still inside its 48-hour grace window, so no violation yet. Compliance check opens around 12:44 PM today; nothing to do until then.</div>
+            <div class="item-sentence">Awarded <a href="https://outlook.office365.com/owa/?ItemID=AAMkADI5NTRlNmNlLTRlMTktNDFlYS1iMmY5LTA5MTdhOWQ2MDVlZABGAAAAAADSd4Gp6MM1T4f0azuAvNVmBwCFKTOgsSYeR4zomdEEjOy5AAAAAH%2FaAACFKTOgsSYeR4zomdEEjOy5AABmiDTgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem">Sunday, Aug 31 at 12:44 PM</a>, about 8 days old. Kent-area tickets opened Sept 3 appear to match this project, several districts already marked complete &mdash; first ticket filed ~71h after award, ~23h late (see Resolved).</div>
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item-tag purple">02</div>
+          <div class="item-body">
+            <div class="item-title">G&amp;J FIBER GROUP LLC &mdash; LL1.7, Phase 1 &amp; 2</div>
+            <div class="item-sentence">Awarded <a href="https://outlook.office365.com/owa/?ItemID=AAMkADI5NTRlNmNlLTRlMTktNDFlYS1iMmY5LTA5MTdhOWQ2MDVlZABGAAAAAADSd4Gp6MM1T4f0azuAvNVmBwCFKTOgsSYeR4zomdEEjOy5AAAAAH%2FaAACFKTOgsSYeR4zomdEEjOy5AABmiDT1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem">Wednesday, Sept 2 at 4:53 PM</a>, about 5.5 days old. No matching Washington ticket yet &mdash; but the award email itself notes the King County pre-con meeting is still pending, so locates aren&rsquo;t expected until that&rsquo;s scheduled. Not treated as a violation; flagged here for visibility only.</div>
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item-tag purple">&mdash;</div>
+          <div class="item-body">
+            <div class="item-title">Two Texas awards, out of scope for this panel</div>
+            <div class="item-sentence">MB4-MB5 Cabinet Redundancy (LV Electric, TXDOT permit) and Brookhaven Transport (Cable Jimenez, Houston market) were both awarded this week but are Texas811 projects &mdash; this check is Washington-only, so they aren&rsquo;t tracked here. Both crews show active, recently-filed Texas811 tickets on the Texas dashboard.</div>
           </div>
         </div>
       </div>
