@@ -105,6 +105,8 @@
   .light{width:11px;height:11px;border-radius:50%;display:inline-block;}
   .light.green{background:#33CC66;box-shadow:0 0 6px #33CC66;}
   .light.red{background:#FF4444;box-shadow:0 0 6px #FF4444;}
+  .light.amber{background:#FFB300;box-shadow:0 0 6px #FFB300;}
+  .light.off{background:#332200;}
   .light-label{
     color:var(--stardate-text);
     font-size:11px;
@@ -263,7 +265,7 @@
   }
 </style>
 </head>
-<body>
+<body data-brief-date="2026-09-11">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
@@ -290,6 +292,10 @@
         <div class="light-item">
           <span class="light red"></span>
           <span class="light-label display">Texas</span>
+        </div>
+        <div class="light-item">
+          <span class="light" id="freshness-light"></span>
+          <span class="light-label display" id="freshness-label">Checking&hellip;</span>
         </div>
       </div>
     </div>
@@ -393,5 +399,40 @@
     </div>
   </div>
 </div>
+<script>
+(function(){
+  try{
+    var briefDate = document.body.getAttribute('data-brief-date'); // 'YYYY-MM-DD'
+    var pacificFmt = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit'});
+    var todayPacific = pacificFmt.format(new Date()); // 'YYYY-MM-DD'
+    var light = document.getElementById('freshness-light');
+    var label = document.getElementById('freshness-label');
+    var msPerDay = 86400000;
+    var briefMs = new Date(briefDate + 'T00:00:00').getTime();
+    var todayMs = new Date(todayPacific + 'T00:00:00').getTime();
+    var diffDays = Math.round((todayMs - briefMs) / msPerDay);
+
+    if(diffDays === 0){
+      light.classList.add('green');
+      label.textContent = 'Current — Today';
+    } else if(diffDays === 1){
+      light.classList.add('amber');
+      label.textContent = 'Stale — 1 Day Old';
+    } else if(diffDays > 1){
+      light.classList.add('red');
+      label.textContent = 'Stale — ' + diffDays + ' Days Old';
+    } else {
+      // brief date is in the future relative to viewer (clock skew / pre-generated) — treat as current
+      light.classList.add('green');
+      label.textContent = 'Current — Today';
+    }
+  }catch(e){
+    var light = document.getElementById('freshness-light');
+    var label = document.getElementById('freshness-label');
+    if(light) light.classList.add('off');
+    if(label) label.textContent = 'Date Unknown';
+  }
+})();
+</script>
 </body>
 </html>
