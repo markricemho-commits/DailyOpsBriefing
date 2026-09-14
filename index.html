@@ -282,15 +282,15 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62856.4 · Operations</div>
+        <div class="topbar-stardate">Stardate 62856.6 · Operations</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
-          <span class="light red"></span>
+          <span class="light green"></span>
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light red"></span>
+          <span class="light green"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -302,7 +302,7 @@
 
     <div class="content">
       <div class="daydate display">Monday · September 14, 2026</div>
-      <div class="weatherline">Centralia today: morning mist and spotty drizzle giving way to breaking clouds and some sun, high near 68&deg;F, low near 51&deg;F overnight, wind light out of the east at 1&ndash;4 mph. Rain chances peak near 49&ndash;67% through mid-morning before clearing through the afternoon; air quality is excellent.</div>
+      <div class="weatherline">Centralia this morning: 55&deg;F and mostly cloudy with periods of light rain, high near 68&deg;F, low near 51&deg;F overnight with increasing cloudiness. Rain chances peak near 67% around 8&ndash;9 AM before clearing through the afternoon; wind light out of the east, air quality excellent.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -336,15 +336,8 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">WA811 &amp; TX811 dashboards haven't refreshed since yesterday</div>
-                <div class="item-sentence">The <u>WA811 dashboard</u> still reads &ldquo;As of September 13, 2026 12:32 PM&rdquo; and the <u>TX811 dashboard</u> reads &ldquo;As of September 13, 2026 12:29 PM&rdquo; &mdash; both confirmed on two independent cache-busted pulls this morning, roughly 16 hours stale. The nightly Watchdog pipeline may need a manual run.</div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="item-tag">02</div>
-              <div class="item-body">
-                <div class="item-title">EzeeFiber utility strike report unread &mdash; KT4.8, 3615 Hampton Way</div>
-                <div class="item-sentence">A FastField-generated strike report for 3615 Hampton Way (KT4.8) came in Friday with a PDF attachment and is still sitting <u>unread</u> in the inbox &mdash; separate from the earlier Manchester Ave/Span 204 gas strike, which is already closed out in that thread.</div>
+                <div class="item-title">EzeeFiber utility strike report still unread &mdash; KT4.8, 3615 Hampton Way</div>
+                <div class="item-sentence">A FastField-generated strike report for 3615 Hampton Way (KT4.8) came in Friday with a PDF attachment and remains <u>unread</u> in the inbox &mdash; separate from the earlier Manchester Ave/Span 204 gas strike, which is already closed out in that thread.</div>
               </div>
             </li>
           </ul>
@@ -356,7 +349,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            No Circleback meeting transcripts were captured for 9/13&ndash;9/14, so there's nothing to summarize from that source today. The Washington/Texas lights track whether each state's dig-ticket dashboard was refreshed today: the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> both still show yesterday's noon timestamp on two independent, cache-busted checks this morning, so both lights are red &mdash; see the Needs Attention item above. No new personal deliveries or Kickstarter updates landed since the last brief (9/11); Resolved is empty today.
+            No Circleback meeting transcripts were captured for 9/13&ndash;9/14, so there's nothing to summarize from that source today. The Washington/Texas lights track whether each state's dig-ticket dashboard was refreshed today: on this rerun, the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> now reads &ldquo;As of September 14, 2026 12:48 PM&rdquo; and the <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> reads &ldquo;As of September 14, 2026 12:35 PM&rdquo; &mdash; both confirmed current on two independent cache-busted checks, so both lights are green (the earlier run this morning had caught them a day stale; the nightly pipeline has since caught up). No new personal deliveries or Kickstarter updates landed since the last brief (9/11); Resolved is empty today.
           </div>
         </div>
       </div>
