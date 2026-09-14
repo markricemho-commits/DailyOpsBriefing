@@ -265,7 +265,7 @@
   }
 </style>
 </head>
-<body data-brief-date="2026-09-11">
+<body data-brief-date="2026-09-14">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
@@ -282,15 +282,15 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62853.1 · Operations</div>
+        <div class="topbar-stardate">Stardate 62856.4 · Operations</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -301,8 +301,8 @@
     </div>
 
     <div class="content">
-      <div class="daydate display">Friday · September 11, 2026</div>
-      <div class="weatherline">Centralia today: considerable cloudiness with a shower in spots, high near 69&deg;F, low near 49&deg;F overnight, wind SSW 2&ndash;4 mph. Rain chances climb through the afternoon (34&ndash;51%), with rain and thunderstorms moving in tomorrow afternoon through Sunday morning.</div>
+      <div class="daydate display">Monday · September 14, 2026</div>
+      <div class="weatherline">Centralia today: morning mist and spotty drizzle giving way to breaking clouds and some sun, high near 68&deg;F, low near 51&deg;F overnight, wind light out of the east at 1&ndash;4 mph. Rain chances peak near 49&ndash;67% through mid-morning before clearing through the afternoon; air quality is excellent.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -314,12 +314,14 @@
             </div>
             <div class="timeline-bar">
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
+              <div class="tick" style="left:33.3%;width:3.3%;"></div>
               <div class="tick" style="left:50%;width:1.7%;"></div>
-              <div class="tick" style="left:53.3%;width:3.4%;"></div>
+              <div class="tick" style="left:53.3%;width:3.3%;"></div>
             </div>
           </div>
           <ul class="legend">
             <li><b>8:30 &ndash; 9 AM</b> &mdash; the Washington daily morning meeting (product &amp; market updates) with the field ops team.</li>
+            <li><b>11 &ndash; 11:30 AM</b> &mdash; MHO PO/Change Request/Utility Strike Invoices Review with EzeeFiber (Frank Chester, Joy Cox) and the MHO accounting team.</li>
             <li><b>1:30 &ndash; 1:45 PM</b> &mdash; the daily Leadership Stand-Up (safety, PM, OSP, and damage rounds).</li>
             <li><b>2 &ndash; 2:30 PM</b> &mdash; three back-to-back daily check-ins: Kent, Des Moines, and Issaquah.</li>
           </ul>
@@ -334,52 +336,15 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">Gas strike still open &mdash; Kent, WA</div>
-                <div class="item-sentence">PSE is on-site at 26429 Manchester Ave (KT4.8, Span 204) with the gas shut off, but as of 1:56 PM they still hadn't pinpointed the break to start digging. <u>The thread</u> with EzeeFiber and the City of Kent has been live all afternoon &mdash; Chris Atkinson is posting updates as they come.</div>
+                <div class="item-title">WA811 &amp; TX811 dashboards haven't refreshed since yesterday</div>
+                <div class="item-sentence">The <u>WA811 dashboard</u> still reads &ldquo;As of September 13, 2026 12:32 PM&rdquo; and the <u>TX811 dashboard</u> reads &ldquo;As of September 13, 2026 12:29 PM&rdquo; &mdash; both confirmed on two independent cache-busted pulls this morning, roughly 16 hours stale. The nightly Watchdog pipeline may need a manual run.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
-                <div class="item-title">Water line hit &mdash; Brookhaven, Houston</div>
-                <div class="item-sentence">Flagged in today's HTX street sheets end-of-day notes. The water department has been notified and an investigation has started, but it isn't closed out yet in <u>the thread</u>.</div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="item-tag">03</div>
-              <div class="item-body">
-                <div class="item-title">EzeeFiber utility strike report unread</div>
-                <div class="item-sentence">A FastField-generated strike report came in with an attachment yesterday and is still sitting <u>unread</u> in the inbox.</div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- RESOLVED -->
-      <div class="panel resolved">
-        <div class="panel-header display" style="background:var(--blue);">Resolved</div>
-        <div class="panel-box" style="border-color:var(--blue);">
-          <ul class="item-list">
-            <li class="item">
-              <div class="item-tag">01</div>
-              <div class="item-body">
-                <div class="item-title">Order #1145429 delivered</div>
-                <div class="item-sentence">Out for delivery this morning, confirmed delivered by early afternoon per <u>USPS tracking</u>.</div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="item-tag">02</div>
-              <div class="item-body">
-                <div class="item-title">UPS package (Value Rsch) delivered</div>
-                <div class="item-sentence">2nd Day Air shipment confirmed delivered Sept 9 at 4:51 PM per <u>UPS's notice</u>.</div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="item-tag">03</div>
-              <div class="item-body">
-                <div class="item-title">Etsy order from GoodRingsUSA delivered</div>
-                <div class="item-sentence">Delivery confirmation came through per <u>the Etsy notice</u>.</div>
+                <div class="item-title">EzeeFiber utility strike report unread &mdash; KT4.8, 3615 Hampton Way</div>
+                <div class="item-sentence">A FastField-generated strike report for 3615 Hampton Way (KT4.8) came in Friday with a PDF attachment and is still sitting <u>unread</u> in the inbox &mdash; separate from the earlier Manchester Ave/Span 204 gas strike, which is already closed out in that thread.</div>
               </div>
             </li>
           </ul>
@@ -391,7 +356,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            No Circleback meeting transcripts were captured for 9/10&ndash;9/11, so there's nothing to summarize from that source today. The Washington/Texas lights track whether each state's dig-ticket dashboard was refreshed today: the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> reads &ldquo;As of September 11, 2026 3:26 PM&rdquo; and the <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> reads &ldquo;As of September 11, 2026 4:05 PM&rdquo; &mdash; both current, so both lights are green.
+            No Circleback meeting transcripts were captured for 9/13&ndash;9/14, so there's nothing to summarize from that source today. The Washington/Texas lights track whether each state's dig-ticket dashboard was refreshed today: the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> both still show yesterday's noon timestamp on two independent, cache-busted checks this morning, so both lights are red &mdash; see the Needs Attention item above. No new personal deliveries or Kickstarter updates landed since the last brief (9/11); Resolved is empty today.
           </div>
         </div>
       </div>
