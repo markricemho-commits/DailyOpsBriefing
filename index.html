@@ -265,7 +265,7 @@
   }
 </style>
 </head>
-<body data-brief-date="2026-09-14">
+<body data-brief-date="2026-09-15">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
@@ -282,15 +282,15 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62856.6 · Operations</div>
+        <div class="topbar-stardate">Stardate 62857.3 · Operations</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -301,8 +301,8 @@
     </div>
 
     <div class="content">
-      <div class="daydate display">Monday · September 14, 2026</div>
-      <div class="weatherline">Centralia this morning: 55&deg;F and mostly cloudy with periods of light rain, high near 68&deg;F, low near 51&deg;F overnight with increasing cloudiness. Rain chances peak near 67% around 8&ndash;9 AM before clearing through the afternoon; wind light out of the east, air quality excellent.</div>
+      <div class="daydate display">Tuesday · September 15, 2026</div>
+      <div class="weatherline">Centralia this morning: 51&deg;F and cloudy with a lingering shower moving through; high near 66&deg;F this afternoon, low near 45&deg;F and clear overnight. Rain chances near 51% at sunrise, easing to roughly 34% by midday and tapering off after 2 PM; wind light out of the NNW, air quality fair.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -314,15 +314,13 @@
             </div>
             <div class="timeline-bar">
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
-              <div class="tick" style="left:33.3%;width:3.3%;"></div>
               <div class="tick" style="left:50%;width:1.7%;"></div>
               <div class="tick" style="left:53.3%;width:3.3%;"></div>
             </div>
           </div>
           <ul class="legend">
             <li><b>8:30 &ndash; 9 AM</b> &mdash; the Washington daily morning meeting (product &amp; market updates) with the field ops team.</li>
-            <li><b>11 &ndash; 11:30 AM</b> &mdash; MHO PO/Change Request/Utility Strike Invoices Review with EzeeFiber (Frank Chester, Joy Cox) and the MHO accounting team.</li>
-            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; the daily Leadership Stand-Up (safety, PM, OSP, and damage rounds).</li>
+            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; the daily Leadership Stand-Up (safety, damage prevention, and top-priority rounds).</li>
             <li><b>2 &ndash; 2:30 PM</b> &mdash; three back-to-back daily check-ins: Kent, Des Moines, and Issaquah.</li>
           </ul>
         </div>
@@ -336,8 +334,59 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">EzeeFiber utility strike report still unread &mdash; KT4.8, 3615 Hampton Way</div>
-                <div class="item-sentence">A FastField-generated strike report for 3615 Hampton Way (KT4.8) came in Friday with a PDF attachment and remains <u>unread</u> in the inbox &mdash; separate from the earlier Manchester Ave/Span 204 gas strike, which is already closed out in that thread.</div>
+                <div class="item-title">WA811 and TX811 dashboards both stale &mdash; nightly pipeline hasn't refreshed</div>
+                <div class="item-sentence">Two independent cache-busted checks this morning both show the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> reading &ldquo;As of September 13, 2026 12:32 PM&rdquo; and the <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> reading &ldquo;As of September 13, 2026 12:29 PM&rdquo; &mdash; both roughly 2 days old as of this morning. The nightly Watchdog pipeline likely needs a manual run.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">02</div>
+              <div class="item-body">
+                <div class="item-title">G-REED (FW2.16) shut down &mdash; expired locates</div>
+                <div class="item-sentence">Per last night's HTX street sheet thread, FW2.16 was shut down due to expired locates; new locates are being worked but the crew is off that span until they clear.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">03</div>
+              <div class="item-body">
+                <div class="item-title">Medina damaged-fiber removal &mdash; unconfirmed</div>
+                <div class="item-sentence">Brandon Hastey asked late yesterday whether Medina would be pulling the damaged fiber today following last night's cut; no reply is visible in the thread yet.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">04</div>
+              <div class="item-body">
+                <div class="item-title">LV Electric locates may hold up today's drilling (FW2.8)</div>
+                <div class="item-sentence">Yesterday's street-sheet note flagged that LV may not be able to drill today depending on locates, which the team was still working on as of last night.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">05</div>
+              <div class="item-body">
+                <div class="item-title">Pal to Sil ArcGIS &mdash; missing structures blocking photo upload</div>
+                <div class="item-sentence">Three structures are missing in ArcGIS and need to be added before EzeeFiber can upload photos for that segment.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">06</div>
+              <div class="item-body">
+                <div class="item-title">Two unread EzeeFiber Utility Strike Reports</div>
+                <div class="item-sentence">Automated strike-report PDFs came in yesterday afternoon and evening and are both still unread &mdash; worth a quick review to confirm neither needs escalation.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RESOLVED -->
+      <div class="panel resolved">
+        <div class="panel-header display" style="background:var(--blue);">Resolved</div>
+        <div class="panel-box" style="border-color:var(--blue);">
+          <ul class="item-list">
+            <li class="item">
+              <div class="item-tag">01</div>
+              <div class="item-body">
+                <div class="item-title">Brookhaven copper line strike &mdash; confirmed dead line</div>
+                <div class="item-sentence">CJ's crew hit a copper line in Brookhaven; a technician confirmed on investigation it was a deadline and not active. No further action needed.</div>
               </div>
             </li>
           </ul>
@@ -349,7 +398,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            No Circleback meeting transcripts were captured for 9/13&ndash;9/14, so there's nothing to summarize from that source today. The Washington/Texas lights track whether each state's dig-ticket dashboard was refreshed today: on this rerun, the <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:inherit;text-decoration:underline;">WA811 dashboard</a> now reads &ldquo;As of September 14, 2026 12:48 PM&rdquo; and the <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:inherit;text-decoration:underline;">TX811 dashboard</a> reads &ldquo;As of September 14, 2026 12:35 PM&rdquo; &mdash; both confirmed current on two independent cache-busted checks, so both lights are green (the earlier run this morning had caught them a day stale; the nightly pipeline has since caught up). No new personal deliveries or Kickstarter updates landed since the last brief (9/11); Resolved is empty today.
+            No Circleback meeting transcripts were captured for 9/14&ndash;9/15, so there's nothing to summarize from that source today. Both the WA811 and TX811 dashboards read &ldquo;As of September 13&rdquo; on two independent cache-busted fetches this morning (headers confirmed a fresh edge response, not a cached hit), so both lights are red &mdash; see item 01 above. No new personal shipping/Kickstarter deliveries landed since the last brief (9/11 remains the most recent); Resolved is limited to the Brookhaven copper-line confirmation above.
           </div>
         </div>
       </div>
