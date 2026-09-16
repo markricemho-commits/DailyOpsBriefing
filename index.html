@@ -282,7 +282,7 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62858.1 · Operations</div>
+        <div class="topbar-stardate">Stardate 62858.4 · Operations · Rerun</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
@@ -290,7 +290,7 @@
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light red"></span>
+          <span class="light green"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -340,8 +340,8 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">WA811 &amp; TX811 dashboards haven't refreshed overnight</div>
-                <div class="item-sentence">Both the <a href="https://markricemho-commits.github.io/wa811-dashboard/">WA811 dashboard</a> (&ldquo;As of September 15, 2026 3:07 PM&rdquo;) and the <a href="https://markricemho-commits.github.io/tx811-dashboard/">TX811 dashboard</a> (&ldquo;As of September 15, 2026 2:56 PM&rdquo;) are still showing yesterday afternoon's data as of this morning &mdash; confirmed on two independent cache-busted fetches. The nightly Watchdog pipeline likely needs a manual run.</div>
+                <div class="item-title">WA811 dashboard still hasn't refreshed</div>
+                <div class="item-sentence">The <a href="https://markricemho-commits.github.io/wa811-dashboard/">WA811 dashboard</a> is still reading &ldquo;As of September 15, 2026 3:07 PM&rdquo; as of this 7:28 AM rerun &mdash; unchanged from the earlier check, confirmed on a fresh no-cache fetch. The nightly Watchdog pipeline likely needs a manual run. TX811 has since caught up (now showing &ldquo;As of September 16, 2026 12:27 PM&rdquo;, last-modified today) &mdash; that light is back to green.</div>
               </div>
             </li>
             <li class="item">
@@ -360,7 +360,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            No Circleback meeting transcripts were captured for 9/15&ndash;9/16, so there's nothing to summarize from that source today. Both regional dashboards read stale on this run &mdash; WA811 last-modified Tue 15 Sep 2026 15:15:58 GMT, TX811 last-modified Tue 15 Sep 2026 15:16:39 GMT, both reconfirmed on a second no-cache fetch (age 15&ndash;16s, not a CDN cache hit) &mdash; hence both lights are red pending a manual Watchdog run. No new personal shipping/Kickstarter deliveries landed in the last 10 days beyond a UPS delivery already noted on 9/9, so Resolved is empty today. Weather sourced from AccuWeather's Centralia, WA 10-day forecast (Wed 9/16 row: 78&deg;/46&deg;, sunny and pleasant, 0% precip).
+            Rerun at Mark's request, ~7:28 AM Pacific. No Circleback meeting transcripts were captured for 9/15&ndash;9/16, so there's nothing to summarize from that source today. WA811 remains stale on this rerun &mdash; last-modified still Tue 15 Sep 2026 15:15:58 GMT, reconfirmed on a fresh no-cache fetch (age 0, not a CDN cache hit) &mdash; so that light stays red pending a manual Watchdog run. TX811 refreshed since the first run this morning (last-modified Wed 16 Sep 2026 14:18:32 GMT) and is back to green. No new personal shipping/Kickstarter deliveries landed in the last 10 days beyond a UPS delivery already noted on 9/9, so Resolved is empty today. Weather sourced from AccuWeather's Centralia, WA 10-day forecast (Wed 9/16 row: 78&deg;/46&deg;, sunny and pleasant, 0% precip).
           </div>
         </div>
       </div>
