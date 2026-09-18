@@ -265,13 +265,13 @@
   }
 </style>
 </head>
-<body data-brief-date="2026-09-17">
+<body data-brief-date="2026-09-18">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
     <div class="rail-block ops"><span class="display">OPS</span></div>
     <div class="rail-block sked"><span class="display">SKED</span></div>
-    <div class="rail-block alert"><span class="display">ALERT</span></div>
+    <div class="rail-block alert"><span class="display">DASH</span></div>
     <div class="rail-block cargo"><span class="display">CARGO</span></div>
     <div class="rail-block log"><span class="display">LOG</span></div>
     <div class="rail-filler"></div>
@@ -282,15 +282,15 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62859.4 &middot; Operations</div>
+        <div class="topbar-stardate">Stardate 62861.0 &middot; Operations</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -301,8 +301,8 @@
     </div>
 
     <div class="content">
-      <div class="daydate display">Thursday &middot; September 17, 2026</div>
-      <div class="weatherline">Centralia today: plenty of sunshine with increasing cloudiness late, high near 80&deg;F, overnight low near 48&deg;F, light winds out of the north. Rain chance essentially zero (0%) all day.</div>
+      <div class="daydate display">Friday &middot; September 18, 2026</div>
+      <div class="weatherline">Centralia today: areas of low clouds, then sun, high near 74&deg;F, overnight low near 49&deg;F with increasing clouds late. Winds light out of the WNW around 2 mph. Rain chance essentially zero (0&ndash;1%) all day. Currently 50&deg;F and mostly clear as of 4:40 AM.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -314,20 +314,14 @@
             </div>
             <div class="timeline-bar">
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
-              <div class="tick" style="left:40%;width:6.7%;"></div>
-              <div class="tick" style="left:46.7%;width:3.3%;"></div>
+              <div class="tick" style="left:50%;width:1.7%;"></div>
               <div class="tick" style="left:53.3%;width:1.1%;"></div>
-              <div class="tick" style="left:54.4%;width:1.1%;"></div>
-              <div class="tick" style="left:55.6%;width:1.1%;"></div>
             </div>
           </div>
           <ul class="legend">
             <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (product &amp; market updates) with the field ops team.</li>
-            <li><b>12 &ndash; 1 PM</b> &mdash; Meet With King County Inspector, South 272nd St &amp; 42nd Ave S (tentative) &mdash; with Ezee Fiber's visiting corporate team also in the field today.</li>
-            <li><b>1 &ndash; 1:30 PM</b> &mdash; G&amp;Reed Weekly Project Status, Issues &amp; Deliverables Review (safety review, site coordination, milestones).</li>
+            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; MWF Leadership Stand-Up (top priority, safety &amp; damage prevention round-robin).</li>
             <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In: Kent.</li>
-            <li><b>2:10 &ndash; 2:20 PM</b> &mdash; Daily Check-In: Des Moines.</li>
-            <li><b>2:20 &ndash; 2:30 PM</b> &mdash; Daily Check-In: Issaquah.</li>
           </ul>
         </div>
       </div>
@@ -340,15 +334,29 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">Strike Count Requested &mdash; Sugarland &amp; Missouri City</div>
-                <div class="item-sentence">Matthew Crowe asked (9/16, 1:34 PM) for a count of all strikes in Sugarland and Missouri City. No reply from Mark found in Sent Items as of this brief &mdash; still open.</div>
+                <div class="item-title">WA811 &amp; TX811 Dashboards Haven't Refreshed Overnight</div>
+                <div class="item-sentence">Both the <a href="https://markricemho-commits.github.io/wa811-dashboard/">WA811</a> and <a href="https://markricemho-commits.github.io/tx811-dashboard/">TX811</a> dashboards still read &ldquo;As of September 17, 2026&rdquo; &mdash; confirmed via two independently cache-busted fetches, with server last-modified headers both showing Sep 17 ~4:08 AM Pacific (~24 hours old, not a caching artifact). The Lazy Dog status file that should confirm last night's pipeline run couldn't be found anywhere accessible this run. Last night's refresh likely didn't complete &mdash; worth a manual run.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
-                <div class="item-title">Unread Utility Strike Report &mdash; Ezee Fiber</div>
-                <div class="item-sentence">Fastfield-generated "Utility Strike Report Ezee Fiber" landed 9/16 at 4:57 PM, sent to Mark only, with an attachment &mdash; still unread. Worth a look before or during today's field visit.</div>
+                <div class="item-title">4.7 Damaged Fiber &mdash; Flagged ASAP, No Reply Seen</div>
+                <div class="item-sentence">Brandon Hastey (9/17, 2:32 PM) said the "4.7 damaged fiber: pull out after cut" issue "needs talked about ASAP," warning it could jeopardize the Strategy start next Tuesday. No follow-up reply is visible in the thread as of this brief &mdash; still open.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">03</div>
+              <div class="item-body">
+                <div class="item-title">Storm Drain Repairs &mdash; 38th &amp; Reith Rd, Kent WA</div>
+                <div class="item-sentence">Chris Atkinson said he'd meet with the city's Roy first thing this morning (9/18) to pin down exact repair locations for the two storm drain breaks and update the group &mdash; still pending as of this brief.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">04</div>
+              <div class="item-body">
+                <div class="item-title">Strike Count Still Requested &mdash; Sugarland &amp; Missouri City</div>
+                <div class="item-sentence">Matthew Crowe's 9/16 request for a count of all strikes in Sugarland and Missouri City still shows no reply from Mark in Sent Items &mdash; carried over, still open.</div>
               </div>
             </li>
           </ul>
@@ -360,7 +368,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            Ezee Fiber's corporate team is visiting field sites today (per Mike's 9/17 7:10 AM safety reminder) &mdash; all crews reminded to have safety gear and their 811 ticket link on hand. The <a href="https://markricemho-commits.github.io/wa811-dashboard/">WA811 dashboard</a> reads &ldquo;As of September 17, 2026 3:40 AM&rdquo; and the <a href="https://markricemho-commits.github.io/tx811-dashboard/">TX811 dashboard</a> reads &ldquo;As of September 17, 2026 4:06 AM&rdquo; &mdash; both confirmed fresh on a cache-busted fetch (last-modified ~11:08 AM UTC, about 30 minutes old at check time), so both lights are green. The Lazy Dog pipeline's status file also reports both runs as &ldquo;ok&rdquo; as of 4:15 AM Pacific &mdash; no pipeline failures to flag. No Circleback meeting transcripts or calendar entries were found for 9/16&ndash;9/17. Personal Gmail over the last 10 days was entirely promotional/newsletter traffic (Kickstarter updates, retailer sales) with no shipping or delivery confirmations, so there's nothing for Cargo or Resolved today. Weather: AccuWeather's live "Today" widget returned a stale cached Sep 16 snapshot, so today's high/low/conditions above are pulled from the same page's 10-day forecast row for Thu 9/17 instead (80&deg;/48&deg;, plenty of sun with increasing clouds, 0% precip).
+            Dashboard freshness check: two separately cache-busted curl fetches of both dashboards returned identical results &mdash; WA811 last-modified Thu, 17 Sep 2026 11:08:02 GMT (page reads &ldquo;As of September 17, 2026 3:40 AM&rdquo;) and TX811 last-modified Thu, 17 Sep 2026 11:08:29 GMT (&ldquo;As of September 17, 2026 4:06 AM&rdquo;) &mdash; both genuinely ~24 hours stale, hence both red above. <code>last_run_status.json</code> from the Lazy Dog pipeline was not found via the connected device folder or a filesystem search, so the cause of last night's missed refresh can't be confirmed from here &mdash; flagged in Needs Attention. No Circleback meeting transcripts or upcoming calendar entries were found for 9/17&ndash;9/18. Personal Gmail over the last ~10 days was entirely promotional/newsletter traffic (Kickstarter, retailer sales, hotel/rewards offers) &mdash; no shipping or delivery confirmations, so nothing for Cargo or Resolved today. The water-main-damage-by-LST/AT&amp;T thread (Blackhawk) appears to be resolving on its own: MHO already clarified LST wasn't operating under an MHO permit, and the City of Friendswood says it will pursue AT&amp;T/Ansco directly &mdash; no action needed from Mark unless the city follows back up.
           </div>
         </div>
       </div>
