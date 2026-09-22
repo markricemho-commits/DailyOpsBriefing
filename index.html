@@ -265,13 +265,13 @@
   }
 </style>
 </head>
-<body data-brief-date="2026-09-21">
+<body data-brief-date="2026-09-22">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
     <div class="rail-block ops"><span class="display">OPS</span></div>
     <div class="rail-block sked"><span class="display">SKED</span></div>
-    <div class="rail-block alert"><span class="display">DASH</span></div>
+    <div class="rail-block alert"><span class="display">ALERT</span></div>
     <div class="rail-block cargo"><span class="display">CARGO</span></div>
     <div class="rail-block log"><span class="display">LOG</span></div>
     <div class="rail-filler"></div>
@@ -282,15 +282,15 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62864.1 &middot; Operations &mdash; Kent Storm Drain Schedule Due Today</div>
+        <div class="topbar-stardate">Stardate 62865.0 &middot; Alert &mdash; WA811/TX811 Pipeline Failed Overnight, Dashboards 1 Day Stale</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light green"></span>
+          <span class="light red"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -301,8 +301,8 @@
     </div>
 
     <div class="content">
-      <div class="daydate display">Monday &middot; September 21, 2026</div>
-      <div class="weatherline">Centralia today: mist early, clearing to sun by afternoon, high near 73&deg;F, overnight low near 47&deg;F. Winds light out of the W around 2 mph. Rain chance highest early morning (~20&ndash;28% with mist) dropping to near 0&ndash;13% by midday. Currently 49&deg;F, feels like 47&deg;F, misty as of 4:32 AM.</div>
+      <div class="daydate display">Tuesday &middot; September 22, 2026</div>
+      <div class="weatherline">Centralia today: partly sunny and pleasant, high near 71&deg;F, overnight low near 43&deg;F. Skies partly cloudy, rain chance around 1%. No active weather alerts.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -314,22 +314,14 @@
             </div>
             <div class="timeline-bar">
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
-              <div class="tick" style="left:26.7%;width:6.7%;"></div>
               <div class="tick" style="left:33.3%;width:3.3%;"></div>
-              <div class="tick" style="left:50%;width:1.7%;"></div>
               <div class="tick" style="left:53.3%;width:1.1%;"></div>
-              <div class="tick" style="left:54.4%;width:1.1%;"></div>
-              <div class="tick" style="left:55.6%;width:1.1%;"></div>
             </div>
           </div>
           <ul class="legend">
             <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (product &amp; market updates) with the field ops team.</li>
-            <li><b>10 &ndash; 11 AM</b> &mdash; Des Moines 3.8 Pre-Construction Meeting, on site at 27045 12th Ave S. (tentative).</li>
-            <li><b>11 &ndash; 11:30 AM</b> &mdash; MHO PO/Change Request/Utility Strike Invoices Review with Ezee Fiber.</li>
-            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; MWF Leadership Stand-Up (top priority, safety &amp; damage prevention round-robin).</li>
-            <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In: Kent.</li>
-            <li><b>2:10 &ndash; 2:20 PM</b> &mdash; Daily Check-In: Des Moines.</li>
-            <li><b>2:20 &ndash; 2:30 PM</b> &mdash; Daily Check-In: Issaquah.</li>
+            <li><b>11 &ndash; 11:30 AM</b> &mdash; Discussion with Mark about relocation to Alvin &mdash; picking the lease conversation back up, with Christopher, Mike, and Chart.</li>
+            <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In: Kent, with Chris Atkinson's team.</li>
           </ul>
         </div>
       </div>
@@ -342,8 +334,15 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">Storm Drain Repairs &mdash; 38th &amp; Reith Rd, Kent WA (schedule due <u>today</u>)</div>
-                <div class="item-sentence">The city has confirmed Ezee/subs are responsible for spot repairs at both storm drain breaks. A <b>detailed repair schedule is due end of day today, September 21</b>, with <b>all repairs complete by September 28</b>. Michael Williams requested damage photos from the crew on 9/18 to get contractor quotes moving &mdash; no newer update found in the thread since, so this is still open and now on the clock.</div>
+                <div class="item-title">WA811 &amp; TX811 Watchdog &mdash; Overnight Pipeline Failed, Both Dashboards 1 Day Stale</div>
+                <div class="item-sentence">Lazy Dog's 9/22 4:45 AM run (Pacific) reports both sides <b>failed</b>. WA811: the continuation run ran out of budget mid-fix &mdash; ITIC's ticket-detail table now shows "Members Notified" contacts instead of real status, which now lives behind the Status History modal; only G&amp;J Fiber (23/23 tickets) has been re-validated against the corrected approach, so nothing was rebuilt or pushed and the dashboard still serves the known-good <b>2026-09-21</b> build. TX811: no new sweep was attempted this run at all, on the standing rule that a partial company sweep is worse than none; it also still serves the <b>2026-09-21</b> build. Recommend a dedicated continuation with a larger tool-call budget to finish patching the status-parsing logic and re-scrape both rosters live.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">02</div>
+              <div class="item-body">
+                <div class="item-title">Strike Info Needed on FDA Sections (9/21)</div>
+                <div class="item-sentence">Brandon Hastey looped Mark in (9/21, 5:05 PM) to help with strike info on FDA sections, alongside Erik Bianchi and Colton Diener, and offered to set up time to go over it &mdash; still unread/unanswered as of this morning.</div>
               </div>
             </li>
           </ul>
@@ -358,15 +357,8 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">4.7 Damaged Fiber &mdash; AT&amp;T Repair Complete</div>
-                <div class="item-sentence">Jamarcus Carouthers confirmed (9/19, 7:56 AM) AT&amp;T arrived the night of 9/18 around 10:30 PM and had service back up by 9:30 AM 9/19 &mdash; the item flagged ASAP on 9/17 as a risk to next Tuesday's Strategy start is closed out.</div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="item-tag">02</div>
-              <div class="item-body">
-                <div class="item-title">WA811 &amp; TX811 Dashboards &mdash; Current</div>
-                <div class="item-sentence">Both dashboards confirmed fresh via cache-busted fetch: WA811 reads &ldquo;As of September 21, 2026 3:22 AM&rdquo; (server last-modified Mon, 21 Sep 2026 10:51:20 GMT) and TX811 reads &ldquo;As of September 21, 2026 4:03 AM&rdquo; (last-modified 11:07:19 GMT). Both lights green above.</div>
+                <div class="item-title">KT4.8 G&amp;J Locates &mdash; Ticket Numbers Provided</div>
+                <div class="item-sentence">After two follow-up requests from Brandon Hastey (9/21, 5:37 PM and 9/21, 11:26 PM) chasing missing locate ticket numbers for the crossings, Jonny with G&amp;J Fiber replied early this morning (9/22, 2:52 AM) with the tickets attached &mdash; closing out the open ask ahead of pre-con with the city.</div>
               </div>
             </li>
           </ul>
@@ -378,7 +370,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            Lazy Dog pipeline status file (last_run_status.json, run_at 2026-09-21 4:06 AM Pacific) reports both WA811 and TX811 as &ldquo;ok&rdquo; &mdash; WA811 scraped 52 tickets across 3 companies, TX811 scraped 143 tickets across 4 companies; both dashboards rebuilt, verified, and pushed to GitHub Pages successfully overnight. No Circleback meeting transcripts or notes were found for the 9/18&ndash;9/21 window. Personal Gmail continues to be almost entirely promotional/newsletter traffic; nothing new or urgent enough for a Cargo panel &mdash; the most recent shipment activity (a delivered order) was over a week old. Daily street-sheet production reports from Houston (Brookhaven, Maple Reserve) came in routine, no flags.
+            WA811/TX811 freshness confirmed via two independent cache-busted fetches plus HTTP headers (not just page text): WA811 page reads &ldquo;As of September 21, 2026 3:22 AM&rdquo; with server <code>last-modified: Mon, 21 Sep 2026 10:51:20 GMT</code>; TX811 reads &ldquo;As of September 21, 2026 4:03 AM&rdquo; with <code>last-modified: Mon, 21 Sep 2026 11:07:19 GMT</code> &mdash; both one calendar day behind today, consistent with the Lazy Dog failure above, so both lights are red. No Circleback meeting transcripts or notes were found for the 9/21&ndash;9/22 window. Personal Gmail was almost entirely promotional/newsletter traffic (Costco, Sportsman's Warehouse, Hilton, Tripadvisor) with no new shipping or delivery activity; one notable non-actionable update: Kickstarter's DC Heroes RPG 40th Anniversary project posted Update #37 (9/18) saying production is complete and fulfillment timelines have been updated &mdash; still in production, not yet shipped, so no Cargo panel today. Houston street-sheet production reports for 9/21 and 9/22 (Brookhaven, Maple Reserve) came in routine with no flags.
           </div>
         </div>
       </div>
