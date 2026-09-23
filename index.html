@@ -282,7 +282,7 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62866.2 &middot; Alert &mdash; Brookhaven Frontier Fiber Strike, Report Requested</div>
+        <div class="topbar-stardate">Stardate 62866.2 &middot; Alert &mdash; Gas Main Trouble Locate (FM 528) &middot; Frontier Fiber Strike Report Due</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
@@ -336,15 +336,15 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">Lazy Dog Status File Not Readable This Run</div>
-                <div class="item-sentence">This brief couldn&rsquo;t open <u>Lazy Dog\last_run_status.json</u> (folder access was not granted to this unattended run), so last night&rsquo;s pipeline result can&rsquo;t be confirmed from the status file. Both live dashboards <b>do</b> show this morning&rsquo;s build (see Log), so this is likely fine &mdash; but any partial-failure detail Lazy Dog recorded would not surface here.</div>
+                <div class="item-title">Trouble Locate &mdash; CenterPoint 2&Prime; Gas Main at Winding Way &amp; FM 528</div>
+                <div class="item-sentence">Andrae Chretien emailed at 6:53 AM, asking for help with a trouble locate on a 2&Prime; CenterPoint gas main at Winding Way and FM 528. He copied Joel Balko (CenterPoint), Christopher Garcia (WSB), Jamarcus Carouthers, and Brandon Hastey, and attached photos. There&rsquo;s no reply on the thread yet. Crews shouldn&rsquo;t bore near an unlocated gas main.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
                 <div class="item-title">Brookhaven Frontier Fiber Strike &mdash; Strike Report Needed (Houston)</div>
-                <div class="item-sentence">Cable Jimenez&rsquo;s bore crew in Brookhaven hit a Frontier 288 micro fiber on 9/22, about 4&prime; off the mark. Daniel Sandoval reports USIC called the cable untraceable and did not locate it, though a mule tape with locate wire was found in the handhole; as of 6:30 PM no one from Frontier had shown up. Mike Hart tagged you (9/22, 6:47 PM) &mdash; &ldquo;Strike report needed.&rdquo; No reply from you on the thread yet.</div>
+                <div class="item-sentence">Cable Jimenez&rsquo;s bore crew in Brookhaven hit a Frontier 288 micro fiber on 9/22, about 4&prime; off the mark. Daniel Sandoval reports USIC called the cable untraceable and did not locate it, though a mule tape with locate wire was found in the handhole; as of 6:30 PM no one from Frontier had shown up. Mike Hart tagged you (9/22, 6:47 PM) &mdash; &ldquo;Strike report needed.&rdquo; No reply from you on the thread as of 8:18 AM. Daniel&rsquo;s morning updates show Cable Jimenez crews back working Clint Parker.</div>
               </div>
             </li>
             <li class="item">
@@ -377,6 +377,13 @@
                 <div class="item-sentence">You replied on 9/22 (10:45 AM) with the requested spreadsheet of WA811 locate tickets past the 10-business-day completion window.</div>
               </div>
             </li>
+            <li class="item">
+              <div class="item-tag">03</div>
+              <div class="item-body">
+                <div class="item-title">Wrike &ldquo;Business Documents&rdquo; Access Removed</div>
+                <div class="item-sentence">Wrike notified you at 8:13 AM that Scott Hartsell, the account administrator, removed your access to the &ldquo;Business Documents&rdquo; account. This is for your information only. If you still need anything from there, ask Scott.</div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -386,7 +393,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            WA811/TX811 freshness was checked with two separate cache-busted fetches plus HTTP headers. <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 23, 2026 3:18 AM&rdquo; (<code>last-modified: Wed, 23 Sep 2026 10:48:54 GMT</code>) and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 23, 2026 03:44 AM&rdquo; (<code>last-modified: Wed, 23 Sep 2026 10:49:31 GMT</code>). Both are current, so both lights are green. The Lazy Dog status file couldn&rsquo;t be read (see Needs Attention 01). Circleback returned no meeting transcripts or notes for 9/22&ndash;9/23. The AccuWeather page served a stale cached copy from 9/18, so today&rsquo;s weather comes from the live Open-Meteo forecast (current 46&deg;F, clear, 4:30 AM). Personal Gmail had no new shipping or delivery notices, so there&rsquo;s no Cargo panel. Kickstarter&rsquo;s DC Heroes RPG 40th Anniversary project is still in fulfillment after Update #37 (9/18). Houston and G&amp;J 4.10 production reports for 9/22 came in routine. Cole Kooy corrected span 167 to 140&prime; of cobble and no rock.
+            WA811/TX811 freshness was re-checked at 8:18 AM with cache-busted fetches. <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 23, 2026 3:18 AM&rdquo; and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 23, 2026 07:52 AM&rdquo;. Both are current, so both lights are green. The Lazy Dog status file (run at 3:55 AM) reports both sides <b>ok</b>. WA811 had 53 tickets, and all integrity checks passed. The Cowork &ldquo;wa811-watchdog-dashboard&rdquo; artifact was <b>not</b> updated because the 11.3 MB file is over the 10 MB artifact limit; GitHub Pages is unaffected. TX811 had 148 tickets, all mapped. The file is 73.2 MB, over GitHub&rsquo;s 50 MB warning level but under the 100 MB hard limit. Circleback returned no meeting transcripts or notes for 9/22&ndash;9/23. The AccuWeather page served a stale cached copy from 9/18, so today&rsquo;s weather comes from the live Open-Meteo forecast (current 46&deg;F, clear, 4:30 AM). Personal Gmail had no new shipping or delivery notices, so there&rsquo;s no Cargo panel. Kickstarter&rsquo;s DC Heroes RPG 40th Anniversary project is still in fulfillment after Update #37 (9/18). Houston and G&amp;J 4.10 production reports for 9/22 came in routine. Cole Kooy corrected span 167 to 140&prime; of cobble and no rock.
           </div>
         </div>
       </div>
