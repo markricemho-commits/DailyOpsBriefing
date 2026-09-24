@@ -282,7 +282,7 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62868.9 &middot; Alert &mdash; TX811 Dashboard Stale &middot; Kent Ticket No-Access &middot; DM3.8 Phase 2 Locates</div>
+        <div class="topbar-stardate">Stardate 62868.9 &middot; Alert &mdash; Kent Ticket No-Access &middot; Frontier Repeat Strikes (Brookhaven) &middot; Partner Charge-Backs</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
@@ -290,7 +290,7 @@
           <span class="light-label display">Washington</span>
         </div>
         <div class="light-item">
-          <span class="light red"></span>
+          <span class="light green"></span>
           <span class="light-label display">Texas</span>
         </div>
         <div class="light-item">
@@ -302,7 +302,7 @@
 
     <div class="content">
       <div class="daydate display">Thursday &middot; September 24, 2026</div>
-      <div class="weatherline">Centralia today: cloudy, with rain arriving this afternoon. High near 68&deg;F, overnight low near 54&deg;F. Winds are light, around 1 mph from the north this morning. Rain chance is about 70% (25&ndash;31% from 2 to 4 PM, then rain and drizzle tonight). No active weather alerts. Friday brings a couple of showers (~85%), then it dries out for the weekend.</div>
+      <div class="weatherline">Centralia today: a spotty morning shower, then rain moving in this afternoon. High near 68&deg;F, overnight low near 53&deg;F. Winds are light, around 1&ndash;4 mph from the north. Rain chance jumps to about 70% from 5 PM, with rain and drizzle continuing tonight. No active weather alerts. Friday brings a couple of showers (~84%), then it dries out for the weekend.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -313,12 +313,14 @@
               <span>6AM</span><span>9AM</span><span>12PM</span><span>3PM</span><span>6PM</span><span>9PM</span>
             </div>
             <div class="timeline-bar">
+              <div class="tick" style="left:6.7%;width:3.3%;"></div>
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
               <div class="tick" style="left:46.7%;width:3.3%;"></div>
               <div class="tick" style="left:53.3%;width:1.1%;"></div>
             </div>
           </div>
           <ul class="legend">
+            <li><b>7 &ndash; 7:30 AM</b> &mdash; HTX Bi-Weekly CM Meeting with Brandon Hastey and the Houston CM group (you accepted this morning).</li>
             <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (product &amp; market updates) with the field ops team.</li>
             <li><b>1 &ndash; 1:30 PM</b> &mdash; G-Reed Weekly Project Status, Issues &amp; Deliverables Review with Brandon Hastey, Gabriel Almanza (G-Reed), Jamarcus Carouthers, and the MHO CM group. The agenda leads with safety. Yesterday&rsquo;s Cochran Rd strike is likely to come up.</li>
             <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In: Kent, with Chris Atkinson&rsquo;s team. It&rsquo;s a good slot to confirm the 3802 Hampton Way access for ticket #26432696.</li>
@@ -334,22 +336,22 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title"><a href="https://markricemho-commits.github.io/tx811-dashboard/">TX811 Dashboard Not Refreshed Overnight</a></div>
-                <div class="item-sentence">The TX811 dashboard still reads &ldquo;As of September 23, 2026 07:52 AM&rdquo;, about 21 hours old at 4:36 AM today. A second no-cache fetch returned the same page (last-modified Sep 23, 14:55 GMT). The repo&rsquo;s last commit is also from 9/23 at 7:54 AM Pacific. WA811 did refresh at 3:18 AM, so last night&rsquo;s TX811 leg appears to have failed or not run. It may need a manual Lazy Dog / Fetch-the-Dog run.</div>
+                <div class="item-title">Kent Locate #26432696 Closed &ldquo;No Access&rdquo; &mdash; 3802 Hampton Way</div>
+                <div class="item-sentence">ELM&rsquo;s Cameron Bergeron closed the ticket as NO ACCESS on 9/23 because the gas and power meters at 3802 Hampton Way couldn&rsquo;t be reached. Every other gas and power line on the ticket is located, and he&rsquo;ll send a tech back once access is arranged. You asked Chris Atkinson for a body on it. Brandon looped in Jonny and Charles Thomas, and Isaac Marban (Marban Enterprise) says he has someone checking every 30 minutes. There&rsquo;s no confirmation yet that the homeowner was reached, and #26442655 has no status update on the thread. The 2 PM Kent check-in is a natural place to close this out.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
-                <div class="item-title">Lazy Dog Status File &mdash; Could Not Be Read This Run</div>
-                <div class="item-sentence">The brief couldn&rsquo;t open <u>Desktop\Lazy Dog\last_run_status.json</u> because folder access was denied in this unattended session. So there&rsquo;s no pipeline confirmation for last night&rsquo;s WA811/TX811 run. Check that file by hand, especially given the stale TX811 dashboard above.</div>
+                <div class="item-title">Brookhaven Frontier Fiber &mdash; Repeat Strikes, No Frontier Damage-Prevention Contact (Ticket #2675901920)</div>
+                <div class="item-sentence">Cable Jimenez reports at least two strikes on this Frontier line. The fiber zigzags across the ROW, and even with potholing the drill head can&rsquo;t find it. USIC&rsquo;s Jose Gonzalez says it&rsquo;s dielectric and can&rsquo;t be located. Cable Jimenez asked for a Frontier damage-prevention point of contact. As of 9/23 at 4:18 PM, Joaquin Garza says USIC escalated it to Frontier as a trouble locate but no one has made contact. Brandon added you &ldquo;for record&rdquo; at 7:06 AM today. With one stretch of work still left on this line, getting a Frontier POC is the open item.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">03</div>
               <div class="item-body">
-                <div class="item-title">Kent Locate #26432696 Closed &ldquo;No Access&rdquo; &mdash; 3802 Hampton Way</div>
-                <div class="item-sentence">ELM&rsquo;s Cameron Bergeron closed the ticket as NO ACCESS on 9/23 because the gas and power meters at 3802 Hampton Way couldn&rsquo;t be reached. Every other gas and power line on the ticket is located, and he&rsquo;ll send a tech back once access is arranged. You asked Chris Atkinson for a body on it. Brandon looped in Jonny and Charles Thomas, and Isaac Marban (Marban Enterprise) says he has someone checking every 30 minutes. There&rsquo;s no confirmation yet that the homeowner was reached, and #26442655 has no status update on the thread.</div>
+                <div class="item-title">Partner Charge-Backs &mdash; Non-Branded Strike Reports Needed per Invoice</div>
+                <div class="item-sentence">Mike Hart forwarded Kennis Mann&rsquo;s &ldquo;Charge back for Partners&rdquo; (7:08 AM) with the damage invoices for several Kent addresses. He asks you to add a non-branded strike report for each invoice, matched to the partner responsible, and notes the fire hydrant repair is Lucio&rsquo;s. Kennis also asked Scott Saunders to identify which partner was working each address. Christopher is putting together a plan.</div>
               </div>
             </li>
             <li class="item">
@@ -371,19 +373,26 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
+                <div class="item-title">TX811 Dashboard Recovered &mdash; 7:24 AM</div>
+                <div class="item-sentence">The 3:00 AM Lazy Dog run found the GeoCall session expired. After you logged back in, it rebuilt and pushed TX811 at 7:24 AM: 147 tickets, all mapped across 5 city tabs, with the live page matching the local build. WA811 ran cleanly overnight with 53 tickets, 18 of them open.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">02</div>
+              <div class="item-body">
                 <div class="item-title">Strike Reports Filed &mdash; Brookhaven (Frontier Fiber) &amp; Bellamina (13446 Cochran Rd, Waller)</div>
                 <div class="item-sentence">FastField strike reports for both 9/22 hits came in on 9/23: Brookhaven / Cable Jimenez at 9:19 AM and Bellamina / G-Reed at 8:59 AM. That covers Mike Hart&rsquo;s &ldquo;strike report needed.&rdquo; Daniel Sandoval&rsquo;s follow-up says the Frontier locates were off by about 25&Prime;, and the crew is still waiting on USIC.</div>
               </div>
             </li>
             <li class="item">
-              <div class="item-tag">02</div>
+              <div class="item-tag">03</div>
               <div class="item-body">
                 <div class="item-title">CenterPoint 2&Prime; Gas Main Trouble Locate (Winding Way &amp; FM 528) &mdash; Worked</div>
                 <div class="item-sentence">Andrae Chretien&rsquo;s end-of-day note says CenterPoint and WSB were both on site for the trouble locate. An adjustment was made and sent out for redline to avoid damages. G-Reed completed spans 017 and 085 on the FW2.16 critical path.</div>
               </div>
             </li>
             <li class="item">
-              <div class="item-tag">03</div>
+              <div class="item-tag">04</div>
               <div class="item-body">
                 <div class="item-title">Dig Law Complaint vs. PSE / ELM &mdash; Filed as Case 26-097</div>
                 <div class="item-sentence">The WA Dig Law Safety Committee (Lynda Holloway) confirmed receipt on 9/23 and filed the complaint as <b>26-097 Complaint Case</b> (alleged RCW 19.122.030 violation). A committee representative will reach out for details, so expect that contact.</div>
@@ -398,7 +407,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            WA811/TX811 freshness was checked at 4:36 AM with cache-busted fetches, and TX811 was re-checked with no-cache headers. <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 24, 2026 3:18 AM&rdquo;, which is current, so the Washington light is green. <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 23, 2026 07:52 AM&rdquo;, confirmed stale on both passes and by the repo&rsquo;s last commit time, so the Texas light is red. The Lazy Dog status file could not be read this run (access denied). Circleback returned no meetings or transcripts for 9/23&ndash;9/24. Weather is from AccuWeather&rsquo;s live page (current 46&deg;F, cloudy, 4:36 AM). Personal Gmail had no new shipping or delivery notices, so there&rsquo;s no Cargo panel; the rest was promos and Kickstarter campaign emails. Houston street sheets for 9/23 came in routine: CJ Brookhaven completed 2,782&prime;, and G&amp;J FW2.8 drilled 2,104&prime; across 9 spans.
+            Refreshed at 7:35 AM. WA811/TX811 freshness was checked with two cache-busted passes each. <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 24, 2026 3:18 AM&rdquo; and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 24, 2026 07:24 AM&rdquo;. Both are current, so both lights are green. The Lazy Dog status file (run_at 7:31 AM) reports both sides <b>ok</b>. TX811 detail: &ldquo;Recovered at 07:24 AM after Mark logged back in to GeoCall (the 03:00 run had found the session expired).&rdquo; The 4:36 AM version of this brief had flagged TX811 as stale before that recovery. Circleback returned no meetings or transcripts for 9/23&ndash;9/24. Weather is from AccuWeather&rsquo;s live page (current 46&deg;F, mostly cloudy, 7:35 AM). Personal Gmail had no new shipping or delivery notices, so there&rsquo;s no Cargo panel. Houston street sheets for 9/23 came in routine: CJ Brookhaven completed 2,782&prime;, and G&amp;J FW2.8 drilled 2,104&prime; across 9 spans.
           </div>
         </div>
       </div>
