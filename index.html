@@ -256,6 +256,10 @@
   .prose p{font-size:14px;font-weight:600;line-height:1.6;color:var(--text-light);margin:0 0 10px 0;}
   .prose p:last-child{margin-bottom:0;}
 
+  .aw-tag{display:inline-block;min-width:92px;text-align:center;font-family:"Arial Narrow",Arial,sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;padding:3px 8px;border-radius:10px;color:#000;margin-right:10px;}
+  .aw-ontime{background:var(--blue);} .aw-unconf{background:var(--tan);} .aw-pending{background:var(--periwinkle);} .aw-late{background:var(--salmon);} .aw-overdue{background:var(--red);color:#fff;} .aw-untracked,.aw-window{background:#555;color:#eee;}
+  .aw-sub{display:block;margin-top:4px;font-size:13px;font-weight:600;color:var(--text-dim);line-height:1.5;}
+
   @media (max-width:680px){
     .rail{display:none;}
     .topbar{border-radius:0 24px 0 0;padding:14px 18px;}
@@ -265,7 +269,7 @@
   }
 </style>
 </head>
-<body data-brief-date="2026-09-25">
+<body data-brief-date="2026-09-28">
 <div class="lcars-wrap">
   <div class="rail">
     <div class="rail-cap top"></div>
@@ -282,7 +286,7 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="topbar-title display">Morning Brief</div>
-        <div class="topbar-stardate">Stardate 62871.6 &middot; Alert &mdash; Frontier POC Still Pending (Brookhaven) &middot; LL1.7 Locate Visibility &middot; Centralia Wind Advisory</div>
+        <div class="topbar-stardate">Stardate 62879.7 &middot; Alert &mdash; DM3.8 Strategy Locates 154h Late &middot; LL1.7 Phase 2 Still Uncalled &middot; 11 AM Double-Booked</div>
       </div>
       <div class="status-lights">
         <div class="light-item">
@@ -301,8 +305,8 @@
     </div>
 
     <div class="content">
-      <div class="daydate display">Friday &middot; September 25, 2026</div>
-      <div class="weatherline">Centralia today: variable clouds with a couple of showers. High near 61&deg;F, tonight mainly clear and chilly with a low near 44&deg;F. SW winds around 9 mph, gusting to 24 mph. Rain chance is about 84% (roughly 0.10&Prime;, about 2 hours of rain). <span style="color:var(--salmon);">Active: Wind Advisory, 10 AM &ndash; 5 PM today.</span> The weekend dries out: Saturday is partly sunny and Sunday is sunny.</div>
+      <div class="daydate display">Monday &middot; September 28, 2026</div>
+      <div class="weatherline">Centralia today: pleasant, with a mix of clouds and sun. The high is near 70&deg;F, and tonight turns cloudy with a low near 54&deg;F. SW winds run around 6 mph with gusts to 15 mph. Rain chance is 8% today, rising to 25% tonight. No active alerts.</div>
 
       <!-- SCHEDULE -->
       <div class="panel">
@@ -315,16 +319,19 @@
             <div class="timeline-bar">
               <div class="tick" style="left:6.7%;width:3.3%;"></div>
               <div class="tick" style="left:16.7%;width:3.3%;"></div>
+              <div class="tick" style="left:26.7%;width:10%;"></div>
+              <div class="tick" style="left:33.3%;width:3.3%;background:var(--salmon);"></div>
               <div class="tick" style="left:50%;width:1.7%;"></div>
               <div class="tick" style="left:53.3%;width:1.1%;"></div>
             </div>
           </div>
           <ul class="legend">
-            <li><b>7 &ndash; 7:30 AM</b> &mdash; HTX Daily CM Meeting with Brandon Hastey and the Houston CM group. It&rsquo;s a good place to ask whether anyone has reached Frontier on the Brookhaven line.</li>
-            <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (product &amp; market updates) with the field ops team.</li>
-            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; MWF Leadership Stand-Up with Christopher, Scott Saunders, Scott Hartsell, Brandon, and Matthew Crowe. Answer three questions in 60&ndash;90 seconds: top priority, what should we know, and what&rsquo;s working. Safety and damage prevention lead the agenda.</li>
+            <li><b>7 &ndash; 7:30 AM</b> &mdash; HTX Daily CM Meeting with Brandon Hastey and the Houston CM group.</li>
+            <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (product &amp; market updates).</li>
+            <li><b>10 &ndash; 11:30 AM</b> &mdash; Kent 4.8 Phase 2 &amp; 3 Hard Surface Restoration Walk at 3216 S 268th St, Kent, with Chris Atkinson, the City of Kent, Ezee Fiber, and Rainier Asphalt. You&rsquo;re marked <u>tentative</u>.</li>
+            <li><b>11 &ndash; 11:30 AM</b> &mdash; MHO PO / Change Request / Utility Strike Invoices Review (Teams, from Frank Chester at Ezee; Mike asked you to join). <span style="color:var(--salmon);">This overlaps the last 30 minutes of the Kent walk.</span></li>
+            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; MWF Leadership Stand-Up. Answer three questions in 60&ndash;90 seconds: top priority, what should we know, and what&rsquo;s working. Safety and damage prevention lead the agenda.</li>
             <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In: Kent, with Chris Atkinson&rsquo;s team.</li>
-            <li><b>Also 10 AM</b> &mdash; Chris Atkinson scheduled the KT 4.8 Phase 1 &amp; 3 hardscape restoration walk for today by email on 9/23. It isn&rsquo;t on your calendar.</li>
           </ul>
         </div>
       </div>
@@ -337,25 +344,52 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">LL1.7 Locates (G&amp;J) &mdash; Scott Wants to Know What You Need for Visibility</div>
-                <div class="item-sentence">Yesterday at 10:14 AM you told Scott you had no notice from G&amp;J and couldn&rsquo;t see the LL1.7 tickets in 811 reporting. At 7:38 PM, Jonny (G&amp;J) replied that the tickets are done, but <u>only for Phase 1</u>. At 7:42 PM Scott wrote, &ldquo;Mark &ndash; let me know in the morning what you need for visibility.&rdquo; Scott had earlier asked Brittany and Jonny for the LL1.7 ticket numbers, and none have been posted to the thread. Next steps: confirm the Phase 1 tickets show up in this morning&rsquo;s WA811 pull, ask for the ticket numbers, and ask when Phase 2 will be called in.</div>
+                <div class="item-title">DM3.8 Strategy &mdash; A Ticket Exists, but It Was Filed 154h Late</div>
+                <div class="item-sentence">At 12:12 AM you asked Jennifer for Strategy&rsquo;s ticket numbers. <u>WA811 ticket 26449253</u> is already in your inbox as an unread ITIC notice from 9/25 7:48 AM. Smily Chan web-filed it on 9/24 at 11:45 PM for Des Moines S 273rd Pl (WO 3.8), and work begins <u>tomorrow, 9/29 at 8 AM</u>. The award went out 9/16 at 2:02 PM, so the 48h deadline was 9/18 at 2:02 PM. The ticket lists the company as &ldquo;STARTEGYHOUS&rdquo; (non-member) with a misspelled caller email, which likely kept it from surfacing. It also doesn&rsquo;t say which phase it covers. Next steps: enter 26449253 in tracking, confirm it covers the Phase 2 route, and have Strategy correct the company name on future tickets.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
-                <div class="item-title">Brookhaven Frontier Fiber &mdash; Still No Frontier Damage-Prevention POC (Ticket #2675901920)</div>
-                <div class="item-sentence">Nothing new has come in since Joaquin Garza&rsquo;s 9/23 note: USIC escalated the line to Frontier as a trouble locate, but no one has reached out. There have been at least two strikes. USIC says the dielectric fiber can&rsquo;t be located, and it zigzags across the ROW. One stretch of work remains, and Cable Jimenez completed 2,550&prime; in Brookhaven yesterday, so the crew keeps working near the line without a Frontier contact. Raise it at the 7 AM HTX call.</div>
+                <div class="item-title">LL1.7 (G&amp;J) &mdash; Phase 1 Tickets Are In, Phase 2 Isn&rsquo;t, and Scott Is Waiting on You</div>
+                <div class="item-sentence">This morning&rsquo;s WA811 pull shows 12 G&amp;J tickets in Lakeland North, starting with 26448897 on 9/24 at 4:07 PM. That&rsquo;s 479h past the 9/4 deadline for the 9/2 award. Jonny said on 9/24 the tickets cover <u>Phase 1 only</u>, and no Phase 2 tickets have appeared. Scott&rsquo;s 9/24 7:42 PM request (&ldquo;let me know in the morning what you need for visibility&rdquo;) still has no reply from you. Reply with the Phase 1 ticket list and a date for Phase 2.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">03</div>
               <div class="item-body">
-                <div class="item-title">DM3.8 Phase 2 Locates &mdash; No Reply from Strategy Yet</div>
-                <div class="item-sentence">On 9/23 at 4:56 PM you asked Jennifer (Strategy) for the status of the Phase 2 tickets, and Scott flagged Phase 2 locates as urgent before awarding Phase 3. No reply has come in on that thread. Meanwhile, JLP is drilling DM3.8 under ticket 26391145, according to the 9/25 WA street sheet.</div>
+                <div class="item-title">11 AM Conflict &mdash; Kent 4.8 Walk vs. PO / Strike Invoice Review</div>
+                <div class="item-sentence">The Kent walk runs until 11:30, and Mike specifically asked you to join the 11:00 Ezee PO/Change Request/Utility Strike Invoices review. The charge-back strike reports you sent Mike last night are likely to come up there. Decide which to attend in person, and join the Teams review from the field if you stay on the walk.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">04</div>
+              <div class="item-body">
+                <div class="item-title">Brookhaven Frontier Fiber &mdash; Still No Frontier POC (Ticket #2675901920)</div>
+                <div class="item-sentence">Nothing new has come in from Frontier or USIC since 9/23. Cable Jimenez keeps working the area: 1,425&prime; across spans 035, 044, and 048 on 9/25, with two fiber and two HH crews scheduled on FM1484 / Clint Parker today. The 9/22 Brookhaven strike report was re-sent through FastField at 12:07 AM. Raise it again at the 7 AM HTX call.</div>
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <!-- AWARD -> 811 -->
+      <div class="panel">
+        <div class="panel-header display" style="background:var(--tan);">Award &rarr; 811 &middot; 48h</div>
+        <div class="panel-box" style="border-color:var(--tan);">
+          <ul class="award-list">
+            <li><span class="aw-tag aw-untracked">NO FEED</span><b>WL3.2 &middot; SDC (TX)</b>
+              <span class="aw-sub">Awarded 9/25 12:41 PM &rarr; due 9/27 12:41 PM. SDC isn&rsquo;t in the TX811 sweep. The award email says the area isn&rsquo;t permit-ready and not to call in locates yet, so the clock is effectively on hold. Ask SDC for ticket numbers once the permit is released.</span></li>
+            <li><span class="aw-tag aw-unconf">ON TIME &middot; AREA?</span><b>WL3.3 &middot; CJ (TX)</b>
+              <span class="aw-sub">Awarded 9/25 12:18 PM &rarr; due 9/27 12:18 PM. 16 Cable Jimenez tickets were filed in Spring: 2676842756 (9/25 6:23 AM), 2676843013 (6:39 AM), 2676843085 (6:44 AM), and more. Joaquin says he&rsquo;ll call in permitted areas only.</span></li>
+            <li><span class="aw-tag aw-unconf">ON TIME &middot; AREA?</span><b>WL3.1 &middot; LV (TX)</b>
+              <span class="aw-sub">Awarded 9/25 10:15 AM &rarr; due 9/27 10:15 AM. 18 LV Electric tickets were filed in Spring: 2676842309 (9/25 5:57 AM), 2676842345 (5:59 AM), 2676842385 (6:02 AM), and more. This supports LV&rsquo;s reply that &ldquo;locates are on the daily report link.&rdquo;</span></li>
+            <li><span class="aw-tag aw-late">LATE</span><b>DM3.8 Phases 1 &amp; 2 &middot; Strategy (WA)</b>
+              <span class="aw-sub">Awarded 9/16 2:02 PM &rarr; due 9/18 2:02 PM. The only ticket found is 26449253 from the ITIC email, filed 9/24 11:45 PM (154h late). Phase 1 rides on existing tickets; Phase 2 coverage isn&rsquo;t confirmed.</span></li>
+            <li><span class="aw-tag aw-late">LATE</span><b>LL1.7 Phases 1 &amp; 2 &middot; G&amp;J (WA)</b>
+              <span class="aw-sub">Awarded 9/2 4:53 PM &rarr; due 9/4 4:53 PM. 12 G&amp;J tickets were filed in Lakeland North: 26448897 (9/24 4:07 PM), 26448934 (4:17 PM), 26448950 (4:25 PM), and more (479h late). Per Jonny, these cover Phase 1 only.</span></li>
+          </ul>
+          <div class="status-line" style="border-bottom:none;padding-bottom:0;margin:16px 0 0 0;">Rule: the awarded partner must file tickets within 48h of the award email. Matching uses the WA phase sheet plus city, and TX partner plus city.</div>
         </div>
       </div>
 
@@ -367,22 +401,22 @@
             <li class="item">
               <div class="item-tag">01</div>
               <div class="item-body">
-                <div class="item-title">Kent #26432696 &mdash; 3802 Hampton Way Now Located</div>
-                <div class="item-sentence">ELM&rsquo;s Cameron Bergeron confirmed at 8:37 AM on 9/24 that 3802 Hampton Way is located and the ticket is Marked Complete. Because the ticket was already closed as No Access, the 811 system won&rsquo;t show the change. Brandon, Charles Thomas, JJ Jordan, and Chris Atkinson have acknowledged it.</div>
+                <div class="item-title">Partner Charge-Backs &mdash; Strike Reports Sent to Mike</div>
+                <div class="item-sentence">On Sunday at 11:19 AM, Mike asked to see the strike reports for the two locations. You replied at 11:49 PM with the LV hit reports (#7172, 26240 13th Pl S, PSE gas; #7170, 25914 13th Pl S).</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">02</div>
               <div class="item-body">
-                <div class="item-title">Partner Charge-Backs &mdash; Analysis Sent to Mike</div>
-                <div class="item-sentence">At 10:55 AM on 9/24 you sent Mike your management-review report. It compares the Daily Operations and Strike Reports against Kennis&rsquo;s invoices and notes that the photo packet shows two different locations. It&rsquo;s now waiting on management.</div>
+                <div class="item-title">Willow Creek 3 &mdash; LV and CJ Locates Landed Inside the Window</div>
+                <div class="item-sentence">Both partners filed Spring tickets the morning of the 9/25 awards: LV filed 18 and CJ filed 16. That closes the question from Friday of whether LV&rsquo;s &ldquo;daily report link&rdquo; reply was backed by real tickets.</div>
               </div>
             </li>
             <li class="item">
               <div class="item-tag">03</div>
               <div class="item-body">
                 <div class="item-title">Overnight Dashboard Refresh &mdash; Both Clean</div>
-                <div class="item-sentence">WA811: 65 tickets, 29 open, 12 expiring within 10 days. A false &ldquo;cancelled&rdquo; flag on JR ticket 26394863 was caught and fixed. TX811: 159 tickets, all mapped, with 23 showing No Response.</div>
+                <div class="item-sentence">WA811: 61 tickets (G&amp;J 36, Medina 14, JR 11), with 27 open and 8 expiring within 10 days. TX811: 140 tickets (G-Reed 88, CJ 28, LV 21, G&amp;J 3), all mapped, with 25 showing No Response.</div>
               </div>
             </li>
           </ul>
@@ -394,7 +428,7 @@
         <div class="panel-header display" style="background:var(--purple);">Log</div>
         <div class="panel-box" style="border-color:var(--purple);">
           <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
-            Refreshed at 4:36 AM. WA811/TX811 freshness was checked with two cache-busted passes each, with last-modified headers from 10:51 UTC today. <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 25, 2026 3:26 AM&rdquo; and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 25, 2026 03:47 AM&rdquo;. Both are current, so both lights are green. The Lazy Dog status file (run_at 3:54 AM) reports both sides <b>ok</b>. Circleback returned no meetings or transcripts for 9/24&ndash;9/25. Weather is from AccuWeather&rsquo;s live Friday 9/25 forecast page. The first fetch returned a cached Thursday page, so it was discarded. Personal Gmail had only promos and Kickstarter campaign mail, with no shipping or delivery notices, so there&rsquo;s no Cargo panel. Houston street sheets for 9/24 came in routine: CJ Brookhaven completed 2,550&prime; across 5 spans, and G-Reed FW2.16 finished spans 001, 033, and 020 and set boxes, with no damage.
+            Refreshed at 4:40 AM. The WA811/TX811 freshness check used a cache-busted curl with no-cache headers (last-modified 10:30 UTC today, age 1s). <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> reads &ldquo;As of September 28, 2026 3:18 AM&rdquo; and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> reads &ldquo;As of September 28, 2026 03:27 AM&rdquo;. Both are current, so both lights are green. The Lazy Dog status file (run_at 3:32 AM) reports both sides <b>ok</b>. The award checker ran against those same builds (WA 61 and TX 140 tickets). It now also evaluates ticket times harvested from email for partners outside the sweep (Strategy, SDC). Housekeeping closed KT4.10 (on time), DM3.8 Medina, and FW2.8 Phases 1&ndash;4 (pre-data). Circleback returned no meetings or transcripts for 9/25&ndash;9/28. Weather is from AccuWeather&rsquo;s live Monday 9/28 &ldquo;Today&rdquo; page. Personal Gmail had no shipping or delivery notices, so there&rsquo;s no Cargo panel. Also noted: A1 Installers (Adina) met with Charles Thomas on KT4.9 on 9/25 and will follow up with questions. Phase 1 must be white-lined before locates are called in, and there&rsquo;s no formal award email yet, so it isn&rsquo;t in the tracker.
           </div>
         </div>
       </div>
