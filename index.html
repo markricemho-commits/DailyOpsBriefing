@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Brief — LCARS</title>
+<style>
+  :root{
+    --black:#000000;
+    --orange:#FF9C00;
+    --orange-hover:#CC7A00;
+    --periwinkle:#9999FF;
+    --salmon:#CC6666;
+    --tan:#FFCC99;
+    --purple:#CC99CC;
+    --blue:#99CCFF;
+    --text-light:#E9E9F2;
+    --text-dim:#9A9AA6;
+    --stardate-text:#5A3A00;
+    --green:#33CC66;
+    --red:#FF4444;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--black);}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text-light);
+  }
+  .display{
+    font-family:"Arial Narrow",Arial,Helvetica,sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+  }
+  .lcars-wrap{
+    display:flex;
+    min-height:100vh;
+    background:var(--black);
+  }
+  /* RAIL */
+  .rail{
+    width:130px;
+    flex:0 0 130px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    padding:0 0 20px 0;
+  }
+  .rail-cap{
+    background:var(--orange);
+    height:60px;
+  }
+  .rail-cap.top{border-radius:40px 0 0 0;}
+  .rail-cap.bottom{border-radius:0 0 0 40px;margin-top:auto;}
+  .rail-block{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding-right:14px;
+    font-size:13px;
+  }
+  .rail-block span{
+    color:var(--black);
+    font-weight:700;
+  }
+  .rail-block.ops{background:var(--orange);}
+  .rail-block.sked{background:var(--periwinkle);}
+  .rail-block.alert{background:var(--salmon);}
+  .rail-block.cargo{background:var(--tan);}
+  .rail-block.log{background:var(--purple);}
+  .rail-filler{background:#1a1a1a;flex:1;min-height:20px;}
+
+  /* MAIN */
+  .main{flex:1;min-width:0;display:flex;flex-direction:column;}
+  .topbar{
+    background:var(--orange);
+    border-radius:0 40px 0 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 28px;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .topbar-left{display:flex;flex-direction:column;gap:2px;}
+  .topbar-title{
+    color:var(--black);
+    font-size:30px;
+    letter-spacing:2px;
+  }
+  .topbar-stardate{
+    color:var(--stardate-text);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  .status-lights{
+    display:flex;
+    gap:20px;
+    margin-left:auto;
+  }
+  .light-item{display:flex;align-items:center;gap:8px;}
+  .light{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .light.green{background:#33CC66;box-shadow:0 0 6px #33CC66;}
+  .light.red{background:#FF4444;box-shadow:0 0 6px #FF4444;}
+  .light.amber{background:#FFB300;box-shadow:0 0 6px #FFB300;}
+  .light.off{background:#332200;}
+  .light-label{
+    color:var(--stardate-text);
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+
+  .content{
+    padding:26px 30px 50px 30px;
+    max-width:960px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .daydate{
+    font-size:14px;
+    letter-spacing:2px;
+    color:var(--text-dim);
+  }
+  .weatherline{
+    font-weight:700;
+    font-size:17px;
+    color:var(--text-light);
+    line-height:1.5;
+  }
+
+  /* PANELS */
+  .panel{display:flex;flex-direction:column;}
+  .panel-header{
+    display:inline-block;
+    padding:6px 24px;
+    border-radius:16px;
+    font-size:14px;
+    letter-spacing:1.5px;
+    color:var(--black);
+    align-self:flex-start;
+    margin-bottom:0;
+  }
+  .panel-box{
+    border:2px solid;
+    border-top-left-radius:0;
+    background:var(--black);
+    padding:20px 22px;
+    margin-top:-2px;
+  }
+
+  /* SCHEDULE TIMELINE */
+  .timeline-wrap{margin-bottom:18px;}
+  .timeline-hours{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:1px;
+    margin-bottom:6px;
+    padding:0 2px;
+  }
+  .timeline-bar{
+    position:relative;
+    height:14px;
+    background:#141414;
+    border-radius:7px;
+    overflow:hidden;
+  }
+  .tick{
+    position:absolute;
+    top:0;
+    bottom:0;
+    background:var(--periwinkle);
+    border-radius:3px;
+  }
+  .legend{
+    list-style:none;
+    margin:14px 0 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .legend li{
+    font-size:14px;
+    font-weight:600;
+    line-height:1.5;
+    color:var(--text-light);
+  }
+  .legend b{color:var(--periwinkle);font-weight:700;}
+
+  /* ITEM LISTS */
+  .item-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;}
+  .item{display:flex;gap:14px;}
+  .item-tag{
+    font-family:"Arial Narrow",Arial,sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:1px;
+    min-width:34px;
+  }
+  .item-body{flex:1;}
+  .item-title{
+    font-weight:700;
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .item-title a{color:inherit;text-decoration:underline;text-decoration-color:var(--text-dim);}
+  .item-sentence{
+    font-size:14px;
+    font-weight:600;
+    line-height:1.55;
+    color:var(--text-light);
+  }
+  .item-sentence u{text-decoration-color:var(--text-dim);}
+  .btn{
+    display:inline-block;
+    margin-top:10px;
+    background:#C6613F;
+    color:#FCFCFB;
+    font-family:-apple-system,"Segoe UI",sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:9px 16px;
+    border-radius:8px;
+    border:1px solid #C6613F;
+  }
+  .btn:hover{background:#AE5133;border-color:#AE5133;}
+
+  .needs .item-tag{color:var(--salmon);}
+  .resolved .item-tag{color:var(--blue);}
+  .cargo .item-tag{color:var(--tan);}
+
+  .status-line{
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--text-dim);
+    line-height:1.6;
+    margin-bottom:16px;
+    padding-bottom:14px;
+    border-bottom:1px solid #2a2a2a;
+  }
+  .award-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .award-list li{font-size:14px;font-weight:600;line-height:1.5;color:var(--text-light);}
+  .award-list b{color:var(--purple);font-weight:700;}
+
+  .prose p{font-size:14px;font-weight:600;line-height:1.6;color:var(--text-light);margin:0 0 10px 0;}
+  .prose p:last-child{margin-bottom:0;}
+
+  .aw-tag{display:inline-block;min-width:92px;text-align:center;font-family:"Arial Narrow",Arial,sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;padding:3px 8px;border-radius:10px;color:#000;margin-right:10px;}
+  .aw-ontime{background:var(--blue);} .aw-unconf{background:var(--tan);} .aw-pending{background:var(--periwinkle);} .aw-late{background:var(--salmon);} .aw-overdue{background:var(--red);color:#fff;} .aw-untracked,.aw-window{background:#555;color:#eee;}
+  .aw-sub{display:block;margin-top:4px;font-size:13px;font-weight:600;color:var(--text-dim);line-height:1.5;}
+
+  @media (max-width:680px){
+    .rail{display:none;}
+    .topbar{border-radius:0 24px 0 0;padding:14px 18px;}
+    .topbar-title{font-size:22px;}
+    .content{padding:20px 16px 40px 16px;}
+    .status-lights{gap:12px;}
+  }
+</style>
+</head>
+<body data-brief-date="2026-11-06">
+<div class="lcars-wrap">
+  <div class="rail">
+    <div class="rail-cap top"></div>
+    <div class="rail-block ops"><span class="display">OPS</span></div>
+    <div class="rail-block sked"><span class="display">SKED</span></div>
+    <div class="rail-block alert"><span class="display">ALERT</span></div>
+    <div class="rail-block cargo"><span class="display">CARGO</span></div>
+    <div class="rail-block log"><span class="display">LOG</span></div>
+    <div class="rail-filler"></div>
+    <div class="rail-cap bottom"></div>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-title display">Morning Brief</div>
+        <div class="topbar-stardate">Stardate 62985.0 &middot; Alert &mdash; G&amp;J WL3.11 Locates 70h Overdue, Still None on TX811 &middot; CJ Still on Expired Tickets &middot; NorthGate &amp; UUCD Tickets Expired for Saturday &middot; G-Reed Water Strike at 38 N Swanwick Pl</div>
+      </div>
+      <div class="status-lights">
+        <div class="light-item"><span class="light green"></span><span class="light-label display">Washington</span></div>
+        <div class="light-item"><span class="light green"></span><span class="light-label display">Texas</span></div>
+        <div class="light-item"><span class="light" id="freshness-light"></span><span class="light-label display" id="freshness-label">Checking&hellip;</span></div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="daydate display">Friday &middot; November 6, 2026</div>
+      <div class="weatherline">Alvin today: mostly sunny and dry, high near 83&deg;F, easing to about 80&deg;F in the afternoon. North wind 5&ndash;10 mph, rain chance about 26%, no thunder. Tonight: mostly cloudy, low around 63&deg;F. <b>Saturday:</b> partly sunny and cooler, high near 78&deg;F, northeast wind 5&ndash;10 mph with gusts to 20 mph. No active NWS alerts. Good drilling weather for the Houston-area crews, including Saturday&rsquo;s work.</div>
+      <div class="panel">
+        <div class="panel-header display" style="background:var(--periwinkle);">Schedule</div>
+        <div class="panel-box" style="border-color:var(--periwinkle);">
+          <div class="timeline-wrap">
+            <div class="timeline-hours"><span>6AM</span><span>9AM</span><span>12PM</span><span>3PM</span><span>6PM</span><span>9PM</span></div>
+            <div class="timeline-bar">
+              <div class="tick" style="left:6.7%;width:3.3%;"></div>
+              <div class="tick" style="left:16.7%;width:3.3%;"></div>
+              <div class="tick" style="left:23.3%;width:1.7%;"></div>
+              <div class="tick" style="left:50%;width:1.7%;"></div>
+              <div class="tick" style="left:53.3%;width:1.1%;"></div>
+            </div>
+          </div>
+          <ul class="legend">
+            <li><b>7 &ndash; 7:30 AM</b> &mdash; HTX Daily CM Meeting (Brandon). G&amp;J WL3.11 Phase 1 is now about 70h past its call-in deadline with no tickets (Needs Attention 01). CJ is still on expired tickets at Sawyer Ridge and Pondera Point (02), and several NorthGate and UUCD tickets expired yesterday ahead of Saturday&rsquo;s work (03). Confirm who repaired the G-Reed water service at 38 N Swanwick Pl (04).</li>
+            <li><b>8:30 &ndash; 9 AM</b> &mdash; Washington Daily Morning Meeting (Brandon). Four crews (G&amp;J, JLP, Rigor) on Kent 4.10 and 10th/9th Ave S, 250&ndash;300 ft planned. Yesterday: 466 ft, no strikes. Correct JLP&rsquo;s 27043 8th Ave S ticket on the sheet (06).</li>
+            <li><b>9:30 &ndash; 9:45 AM</b> &mdash; G&amp;J WA Partner Meeting (Brandon, Brittany and the G&amp;J leads). G&amp;J is on the invite, so this is the best chance today to get WL3.11 ticket numbers from Brittany (01) and the 1955 Rolling Stone Dr ticket fixed (05).</li>
+            <li><b>1:30 &ndash; 1:45 PM</b> &mdash; MWF Leadership Stand-Up (Christopher). Top priority, what to know, what&rsquo;s working. Good place to raise the G&amp;J WL3.11 non-compliance and the expired-ticket pattern.</li>
+            <li><b>2 &ndash; 2:10 PM</b> &mdash; Daily Check-In Kent (Chris Atkinson). Confirm the 4604 Kent Ct CenturyLink status before more Kent 4.10 bores (07).</li>
+          </ul>
+          <div class="status-line" style="border-bottom:none;padding-bottom:0;margin:14px 0 0 0;">All times are PT. HTX has a Saturday (11/7) street sheet out, with crews in Tomball, The Woodlands and Spring. CJ says WL3.3 is ready for the GIS check this morning, and Brandon asked Josh to GIS-check all of FiberNet WL3.9.</div>
+        </div>
+      </div>
+      <div class="panel needs">
+        <div class="panel-header display" style="background:var(--salmon);">Needs Attention</div>
+        <div class="panel-box" style="border-color:var(--salmon);">
+          <ul class="item-list">
+            <li class="item">
+              <div class="item-tag">01</div>
+              <div class="item-body">
+                <div class="item-title">G&amp;J WL3.11 Phase 1 &mdash; OVERDUE 69.8h, Still No Tickets on TX811</div>
+                <div class="item-sentence">Scott released WL3.11 on 11/2 at 6:41 AM, so the 24h deadline was 11/3 at 6:41 AM. TX811 (As of 11/6 2:46 AM) still has <u>no G&amp;J tickets for WL3.11</u>, and Outlook has nothing from G&amp;J since Brittany&rsquo;s 11/2 8:51 AM &ldquo;I will get this scheduled.&rdquo; The 11/3 non-compliance notice is still drafted but unsent. This is the third brief in a row. Brittany is on today&rsquo;s 9:30 AM G&amp;J WA Partner Meeting: get the ticket numbers there or send the notice.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">02</div>
+              <div class="item-body">
+                <div class="item-title">CJ Still on Expired and Wrong Tickets &mdash; Sawyer Ridge, Pondera Point, Quiet Mead, Gildwood</div>
+                <div class="item-sentence">Last night&rsquo;s locate check flags CJ RED on both the 11/6 and 11/7 HTX sheets. <u>90 W and 110 E Sawyer Ridge Dr are still on tickets that expired 10/30</u>, and 19 and 27 Pondera Point Dr are still on 2678822636, which expired 11/4. 19 Quiet Mead Pl still cites an Evermore Trl ticket (the covering ticket 2678450873 isn&rsquo;t clear), and 119 Gildwood Pl still has Centric gas &ldquo;In Conflict&rdquo; with AT&amp;T and Comcast overdue. This is the second night in a row. Hold these lines until CJ has valid, clear tickets.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">03</div>
+              <div class="item-body">
+                <div class="item-title">Tickets Expired Yesterday &mdash; NorthGate Pinto Point and UUCD Paloma Bend, on the 11/6 and 11/7 Sheets</div>
+                <div class="item-sentence">NorthGate&rsquo;s <u>30 S Pinto Point Cir (2678946938) and 167 Pinto Point Pl (2678946854)</u> expired 11/5 at about 3:15 PM PT, and no other ticket covers them. UUCD&rsquo;s 6 Paloma Bend Pl (2678933885) expired 11/5 at 5:10 AM PT. NorthGate&rsquo;s 35 Prairie Falcon Pl and 14 Mariscal Pl tickets also expired, but clear replacements exist (2679413523 and 2679413616), so those only need sheet updates. Confirm relocates before these crews dig today or Saturday.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">04</div>
+              <div class="item-body">
+                <div class="item-title">G-Reed Water Strike &mdash; 38 N Swanwick Pl (WL3.7)</div>
+                <div class="item-sentence">Jamarcus reported a G-Reed water strike at 38 N Swanwick Pl at 9:20 AM PT yesterday. Michael Williams reported the service line fixed at 11:43 AM. Jamarcus then asked <u>whether G-Reed or the MUD did the repair</u>, and there&rsquo;s no answer in Outlook. Get that answer and make sure the strike report is filed.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">05</div>
+              <div class="item-body">
+                <div class="item-title">HTX Street-Sheet Flags for 11/6&ndash;11/7 &mdash; Uncovered Lines</div>
+                <div class="item-sentence">52 lines checked across three sheets, 50 flagged. Beyond items 02&ndash;03, these lines have no clear covering ticket: <u>G&amp;J&rsquo;s 1955 Rolling Stone Dr</u> (Friendswood) cites a Sugar Maple Ct ticket, and the covering ticket 2678675495 isn&rsquo;t clear. LV&rsquo;s two 3 Waterbridge Dr lines (2679412460 not clear). FiberNet&rsquo;s 54 Sandwell Pl is beyond every Sandwell Pl ticket. SDC&rsquo;s 3 Mariposa Woods Dr (2679272733 not clear). Nerys&rsquo;s 35 and 79 Elander Blossom Dr and 45 Botanical Vista Dr aren&rsquo;t inside any ticket. BCG&rsquo;s 6498 Skinner Ln still has no ticket. The G-Reed, FiberNet, NorthGate, UUCD and G&amp;J Burr Oak lines only need sheet corrections, because clear tickets exist.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">06</div>
+              <div class="item-body">
+                <div class="item-title">WA Street Sheet for 11/6 &mdash; JLP Ticket Correction, Rigor Unchecked</div>
+                <div class="item-sentence">JLP&rsquo;s 27043 8th Ave S line still cites 26458868 (10th Ave S). The covering ticket 26476303 is clear, so correct the sheet. Rigor&rsquo;s 27000 10th Ave S line wasn&rsquo;t verified, because the check doesn&rsquo;t map Rigor yet. Des Moines PSE tickets 26456350, 26453815 and 26453816 were closed as denied access (locked gates) and have no update, with JLP and Rigor back on 10th Ave S today.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">07</div>
+              <div class="item-body">
+                <div class="item-title">4604 Kent Ct (26495211) &mdash; CenturyLink Response Still Unconfirmed</div>
+                <div class="item-sentence">No email since QLNWA16 (CenturyLink) was last flagged &ldquo;Not yet responded,&rdquo; 15 days after the 10/22 ticket. Cole&rsquo;s plan has the crews back on Kent 4.10 today. Confirm a positive response, a documented no-show call, or a hold at the 2 PM Kent check-in.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">08</div>
+              <div class="item-body">
+                <div class="item-title">3134 Indian Summer Trail (FW2.11) &mdash; Power Back, Close-Out Items Open</div>
+                <div class="item-sentence">Andrae reported at 3:41 PM yesterday that <u>CenterPoint has reconnected power</u> after the electric-drop nick. Brandon added Phoenix and both Scotts to the thread. Still missing from Outlook: the City of Friendswood inspection sign-off, confirmation that the homeowners are out of the hotel and who covers it, and a filed strike report.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">09</div>
+              <div class="item-body">
+                <div class="item-title">Carried Forward, No Update &mdash; CJ Streetlights, FiberNet WL3.9 Water Hit, Others</div>
+                <div class="item-sentence">Still no email on: CenterPoint&rsquo;s fault finding on the three Rockwell Blvd streetlights CJ may have damaged (WL3.3), the 126/130 Wood Drake Pl address and locate status for FiberNet&rsquo;s 11/3 WL3.9 water hit, the KT4.10 Span 046 PSE offsets and Chris&rsquo;s written report, an MHO reply to Ezee HSE&rsquo;s 10/30 PPE photo, Medina&rsquo;s WL3.12 water-service repair confirmation, Victoria FG&rsquo;s 10/29 strike-report request, CenterPoint&rsquo;s statement on the WL3.9 gas-main strike at 74 E Heritage Mill, and CJ&rsquo;s unexplained &ldquo;Utility Strikes: 4.&rdquo;</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header display" style="background:var(--tan);">Award &rarr; 811 &middot; 24h</div>
+        <div class="panel-box" style="border-color:var(--tan);">
+          <ul class="award-list">
+            <li><span class="aw-tag aw-overdue">OVERDUE</span><b>WL3.11 Phase 1 &middot; G&amp;J (TX)</b>
+              <span class="aw-sub">Released 11/2 6:41 AM &rarr; due 11/3 6:41 AM, now 69.8h overdue. TX811 (As of 11/6 2:46 AM, 744 tickets parsed) has no G&amp;J tickets for it, and no ticket numbers came by email. Brittany&rsquo;s only reply was &ldquo;I will get this scheduled&rdquo; (11/2 8:51 AM). The 11/3 non-compliance notice is drafted but unsent.</span></li>
+            <li><span class="aw-tag aw-ontime">ON TIME</span><b>WL3.5 Phase 2 &middot; G-Reed (TX)</b>
+              <span class="aw-sub">Awarded 11/2 4:17 PM &rarr; due 11/3 4:17 PM. All 8 tickets were filed 11/3 starting at 1:16 AM: 2680787665 (W Canyon Wren Cir), 2680787745 (Verdin Pl, 1:19 AM) and 2680787855 (E Canyon Wren Cir, 1:24 AM). Spring. Josh updated the WL3.5 footage to 6,194 ft yesterday.</span></li>
+            <li><span class="aw-tag aw-unconf">ON TIME &middot; AREA?</span><b>WL3.6 Phase 2 &middot; FiberNet (TX)</b>
+              <span class="aw-sub">Awarded 11/2 4:08 PM &rarr; due 11/3 4:08 PM. FiberNet tickets in the WL area count, the first filed 11/2 at 7:55 AM under the 72h early-call grace: 2680676752 (Pine Plains Dr), 2680676809 (Witherbee Pl) and 2680676855 (Little Falls Pl). The segment isn&rsquo;t confirmed, and FiberNet hasn&rsquo;t emailed WL3.6 ticket numbers.</span></li>
+          </ul>
+          <div class="status-line" style="border-bottom:none;padding-bottom:0;margin:16px 0 0 0;">Rule: the awarded partner must file tickets within 24h of the award email. Matching uses the WA phase sheet plus city, and TX partner plus city (WL = Spring, The Woodlands, Tomball or Aldine). No new awards since yesterday&rsquo;s run. The 11/5 CJ WL3.3, FiberNet WL3.9, G-Reed WL3.4/WL3.5/WL3.7 and UUCD WL3.5 emails are GIS, walk and footage follow-ups on existing awards. No entries needed housekeeping.</div>
+        </div>
+      </div>
+      <div class="panel resolved">
+        <div class="panel-header display" style="background:var(--blue);">Resolved</div>
+        <div class="panel-box" style="border-color:var(--blue);">
+          <ul class="item-list">
+            <li class="item">
+              <div class="item-tag">01</div>
+              <div class="item-body">
+                <div class="item-title">Argus 3.0 Nightly Refresh OK</div>
+                <div class="item-sentence">Both dashboards rebuilt at 2:44&ndash;2:46 AM PT today (WA 90 tickets, TX 762). Overall status is OK with no problems.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">02</div>
+              <div class="item-body">
+                <div class="item-title">3134 Indian Summer Trail Power Reconnected</div>
+                <div class="item-sentence">CenterPoint reconnected the electric drop yesterday (Andrae, 3:41 PM). The close-out items stay open as Needs Attention 08.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">03</div>
+              <div class="item-body">
+                <div class="item-title">G-Reed WL3.4 Phase 2 Walkout Passed</div>
+                <div class="item-sentence">Charles reported at 12:46 PM yesterday that the walkout passed with no outstanding issues and all work accepted.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">04</div>
+              <div class="item-body">
+                <div class="item-title">FiberNet WL3.9 Phase 2 Complete; CJ WL3.3 Ready for GIS</div>
+                <div class="item-sentence">Aris reported WL3.9 Phase 2 100% complete with GIS photos uploaded (3:08 PM), and Brandon asked Josh to GIS-check the whole section. Joaquin says all WL3.3 fiber, tails, conduit and handholes are placed and confirmed he&rsquo;s ready for the GIS check this morning.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">05</div>
+              <div class="item-body">
+                <div class="item-title">WA Crews: 466 ft, No Strikes; G&amp;J Kent Lines Clear</div>
+                <div class="item-sentence">Cole&rsquo;s 11/5 report: G&amp;J 277 ft, JLP 121 ft, Rigor 68 ft (not yet approved), all cobble, no strikes, and all Ezee signatures done. The other two lines on the 11/6 WA sheet weren&rsquo;t flagged, and 26104 42nd Ave S no longer appears.</div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item-tag">06</div>
+              <div class="item-body">
+                <div class="item-title">Street Sheets for 11/6 and 11/7 Issued</div>
+                <div class="item-sentence">The WA sheet went out at 2:14 PM yesterday and Cole reports it approved. The HTX 11/6 sheet went out at 3:08 PM and the Saturday 11/7 HTX sheet at 3:34 PM.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header display" style="background:var(--purple);">Log</div>
+        <div class="panel-box" style="border-color:var(--purple);">
+          <div class="status-line" style="border-bottom:none;padding-bottom:0;margin-bottom:0;">
+            Built Friday at about 4:45 AM PT (scheduled cloud run, with working files from the Argus-3.0 repository). <b>Dashboards:</b> cache-busted fetches (edge age 5s, last-modified Fri 11/6 10:47&ndash;10:48 GMT) read <a href="https://markricemho-commits.github.io/wa811-dashboard/" style="color:var(--blue);">WA811</a> &ldquo;As of November 6, 2026 2:44 AM&rdquo; and <a href="https://markricemho-commits.github.io/tx811-dashboard/" style="color:var(--blue);">TX811</a> &ldquo;As of November 06, 2026 02:46 AM.&rdquo; Both are from today, so both lights are green. <b>Argus 3.0:</b> argus_status.json (WA and TX copies are identical) shows run_at 2026-11-06 2:46 AM PT and overall OK. wa811 reads &ldquo;90 tickets pulled, dashboard built and checked by Argus 3.0&rdquo; and tx811 &ldquo;762 tickets pulled, dashboard built and checked by Argus 3.0,&rdquo; with no problems (<a href="https://github.com/markricemho-commits/Argus-3.0/actions/runs/42204524483" style="color:var(--blue);">run 42204524483</a>). Medina and JR show 0 WA tickets in the 45-day window. <b>Award checker:</b> ran at 4:28 AM PT on fresh downloads of both live pages (WA 90 tickets, TX 744 parsed). Statuses are unchanged from yesterday, and G&amp;J WL3.11 has gone from 45.8h to 69.8h overdue. No awards were added or closed. Ledger saved through Ops Save (run 42218037755). No script or map changes. <b>Street-sheet flags</b> come from the 11/5 5:09 PM locate-validation email (work date 11/7, covering the WA 11/6 sheet and the HTX 11/6 and 11/7 sheets). That check still doesn&rsquo;t map the Rigor partner code. The water-strike details come from Jamarcus&rsquo;s and Michael&rsquo;s 11/5 replies on the HTX 11/5 sheet thread. Circleback returned no meetings for 11/5&ndash;11/6. Weather is for Alvin, TX 77511, from the NWS gridpoint forecast (generated 12:28 UTC) and alerts API (no alerts), cross-checked with wttr.in (high 81&deg;F, low 65&deg;F, 26% rain, 0% thunder). No personal shipments need attention. The only Gmail items are retail and travel promos. Gmail and Outlook show no trips in the next 14 days.
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+</div>
+<script>
+(function(){
+  try{
+    var briefDate = document.body.getAttribute('data-brief-date'); // 'YYYY-MM-DD'
+    var pacificFmt = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit'});
+    var todayPacific = pacificFmt.format(new Date()); // 'YYYY-MM-DD'
+    var light = document.getElementById('freshness-light');
+    var label = document.getElementById('freshness-label');
+    var msPerDay = 86400000;
+    var briefMs = new Date(briefDate + 'T00:00:00').getTime();
+    var todayMs = new Date(todayPacific + 'T00:00:00').getTime();
+    var diffDays = Math.round((todayMs - briefMs) / msPerDay);
+
+    if(diffDays === 0){
+      light.classList.add('green');
+      label.textContent = 'Current — Today';
+    } else if(diffDays === 1){
+      light.classList.add('amber');
+      label.textContent = 'Stale — 1 Day Old';
+    } else if(diffDays > 1){
+      light.classList.add('red');
+      label.textContent = 'Stale — ' + diffDays + ' Days Old';
+    } else {
+      // brief date is in the future relative to viewer (clock skew / pre-generated) — treat as current
+      light.classList.add('green');
+      label.textContent = 'Current — Today';
+    }
+  }catch(e){
+    var light = document.getElementById('freshness-light');
+    var label = document.getElementById('freshness-label');
+    if(light) light.classList.add('off');
+    if(label) label.textContent = 'Date Unknown';
+  }
+})();
+</script>
+</body>
+</html>
